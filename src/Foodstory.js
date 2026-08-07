@@ -359,7 +359,7 @@ return (
   const item = sections[activeSection];
 
   return (
-    <div className="relative rounded-2xl sm:p-0 p-6 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden sm:mt-4  mt-10 sm:ml-0 ml-10 sm:mb-5 mb-20">
+    <div className="relative rounded-2xl sm:p-0 p-6 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden mt-4  md:mt-10 ml-0 md:ml-10 mb-5 md:mb-20">
 
       <div
         key={item.id}
@@ -367,7 +367,7 @@ return (
         className="
           relative w-full 
           flex items-start sm:items-center justify-center
-          p-4 sm:p-0 md:p-10
+          p-0 md:p-10
           min-h-[65vh] sm:min-h-[50vh] md:min-h-screen
           bg-cover bg-center bg-no-repeat
           transition-all duration-700 ease-in-out
@@ -396,8 +396,8 @@ return (
         max-w-6xl
         w-full
         bg-black/10
-        sm:p-0
-        p-6
+        p-0
+        md:p-6
 
         rounded-lg
         flex flex-col
