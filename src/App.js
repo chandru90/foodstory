@@ -18,10 +18,11 @@ export default function App() {
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
-      
+      <div>
       <select
         value={locale}
         onChange={(e) => setLocale(e.target.value)}
+         className="hidden md:block"
       >
         <option value="en">English</option>
         <option value="fr">French</option>
@@ -30,11 +31,12 @@ export default function App() {
         <option value="ta">Tamil</option>
       </select>
 
-     const [locale, setLocale] = useState("en");
+   
 
   
 
   <FoodStory locale ={locale} />
+  </div>
 </IntlProvider>
     
   );
