@@ -1,13 +1,9 @@
 // import { useTranslation } from "react-i18next";
 import React, { useState, useRef, useEffect } from "react";
-import { useMemo } from "react";
+// import { useMemo } from "react";
 
 import { useIntl } from "react-intl";
-import messages_en from './i18n/locales/en/translaton.json';
-import messages_fr from './i18n/locales/fr/translaton.json';
-import messages_sp from './i18n/locales/es/translaton.json';
-import messages_hi from './i18n/locales/hi/translaton.json';
-import messages_rs from './i18n/locales/ta/translaton.json';
+
 
 
 
@@ -21,27 +17,26 @@ const [activeSection, setActiveSection] = useState(0);
   const [remainingTime, setRemainingTime] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-const [currentWordIndex, setCurrentWordIndex] = useState(-1);
+// const [currentWordIndex, setCurrentWordIndex] = useState(-1);
 
 
 const [currentBg, setCurrentBg] = useState(0);
-const [selectedSection, setSelectedSection] = useState(null);
 
 const imageInterval = useRef(null);
 
 
-const [activeWordIndex, setActiveWordIndex] = useState(null);
-const [spokenWords, setSpokenWords] = useState([]);
 
- const params = useMemo(
-    () => new URLSearchParams(window.location.search),
-    []
-  );
+// const [spokenWords, setSpokenWords] = useState([]);
 
-  const bgColor = params.get("bgColor") || "#374151";
-  const theme = params.get("theme") || "#2196F3";
-  const fontName = params.get("fontName") || "Arial";
-  const fontSize = params.get("fontSize") || "16";
+//  const params = useMemo(
+//     () => new URLSearchParams(window.location.search),
+//     []
+//   );
+
+  // const bgColor = params.get("bgColor") || "#374151";
+  // const theme = params.get("theme") || "#2196F3";
+  // const fontName = params.get("fontName") || "Arial";
+  // const fontSize = params.get("fontSize") || "16";
 let speechLocale;
 
 if (locale === "en") {
@@ -95,12 +90,12 @@ useEffect(() => {
   speech.rate = 1;
 
   // Highlight current word
-  speech.onboundary = (event) => {
-    if (event.name === "word") {
-      const words = text.substring(0, event.charIndex).split(" ");
-      setCurrentWordIndex(words.length - 1);
-    }
-  };
+  // speech.onboundary = (event) => {
+  //   if (event.name === "word") {
+  //     const words = text.substring(0, event.charIndex).split(" ");
+  //     setCurrentWordIndex(words.length - 1);
+  //   }
+  // };
 
 
   
@@ -110,7 +105,7 @@ useEffect(() => {
 
   const section = sections.find((item) => item.id === id);
 
-  setSelectedSection(section);
+  // setSelectedSection(section);
   setCurrentBg(0);
   setSpeakingId(id);
   setRemainingTime(duration);
@@ -150,7 +145,7 @@ speech.onend = () => {
 
   setSpeakingId(null);
   setRemainingTime(0);
-  setCurrentWordIndex(-1);
+  // setCurrentWordIndex(-1);
   setIsPaused(false);
 console.log("moving to next section")
   // Move to next section
@@ -204,21 +199,21 @@ console.log("moving to next section")
 
 
 
-    const getWordBoundaries = (text) => {
-  const regex = /\S+/g;
-  const boundaries = [];
+//     const getWordBoundaries = (text) => {
+//   const regex = /\S+/g;
+//   const boundaries = [];
 
-  let match;
-  while ((match = regex.exec(text)) !== null) {
-    boundaries.push({
-      word: match[0],
-      start: match.index,
-      end: match.index + match[0].length,
-    });
-  }
+//   let match;
+//   while ((match = regex.exec(text)) !== null) {
+//     boundaries.push({
+//       word: match[0],
+//       start: match.index,
+//       end: match.index + match[0].length,
+//     });
+//   }
 
-  return boundaries;
-};
+//   return boundaries;
+// };
      const sections = [
 
             { id: "intro", bgImages: [ "foodstories.png"] },
@@ -349,11 +344,13 @@ return (
   <div className=" bg-gray-700"
   
   
-   style={{
-        backgroundColor: bgColor,
-        fontFamily: fontName,
-        fontSize: `${fontSize}px`,
-      }}>
+  //  style={{
+  //       backgroundColor: bgColor,
+  //       fontFamily: fontName,
+  //       fontSize: `${fontSize}px`,
+  //     }}
+      
+      >
 
 
     
