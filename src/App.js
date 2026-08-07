@@ -2,7 +2,7 @@
 
 
 import { useState } from "react";
-import { IntlProvider, FormattedMessage } from "react-intl";
+import { IntlProvider } from "react-intl";
 
 import FoodStory from "./Foodstory.js";
 import en from "./i18n/locales/en/translaton.json";
