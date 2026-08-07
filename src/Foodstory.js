@@ -489,49 +489,56 @@ speakText(translatedDescription, item.id);
 
 
         {/* Previous */}
-        <button
-          onClick={() =>
-            setActiveSection(
-              activeSection === 0
-              ? sections.length - 1
-              : activeSection - 1
-            )
-          }
-          className="
-            absolute left-5
-            top-1/2
-            bg-black
-            text-white
-            rounded-full
-            px-4 py-2
-            text-xl
-          "
-        >
-          ❮
-        </button>
+      <button
+  type="button"
+  onTouchStart={(e) => e.stopPropagation()}
+  onClick={() =>
+    setActiveSection((prev) =>
+      prev === 0 ? sections.length - 1 : prev - 1
+    )
+  }
+  className="
+    absolute left-5
+    top-1/2 -translate-y-1/2
+    z-50
+    bg-black
+    text-white
+    rounded-full
+    w-12 h-12
+    flex items-center justify-center
+    text-xl
+    touch-manipulation
+    active:scale-95
+  "
+>
+  ❮
+</button>
 
 
 
         {/* Next */}
-        <button
-          onClick={() =>
-            setActiveSection(
-              (activeSection + 1) % sections.length
-            )
-          }
-          className="
-            absolute right-5
-            top-1/2
-            bg-black
-            text-white
-            rounded-full
-            px-4 py-2
-            text-xl
-          "
-        >
-          ❯
-        </button>
-
+   <button
+  type="button"
+  onClick={() => {
+    console.log("button clicked");
+    setActiveSection((prev) => (prev + 1) % sections.length);
+  }}
+  className="
+    absolute right-5
+    top-1/2 -translate-y-1/2
+    z-50
+    bg-black
+    text-white
+    rounded-full
+    w-12 h-12
+    flex items-center justify-center
+    text-xl
+    touch-manipulation
+    active:scale-95
+  "
+>
+  ❯
+</button>
 
 
         {/* Dots */}
