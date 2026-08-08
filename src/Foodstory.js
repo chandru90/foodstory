@@ -362,24 +362,47 @@ return (
     <div className="relative rounded-2xl sm:p-0 p-6 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden mt-4  md:mt-10 ml-0 md:ml-10 mb-5 md:mb-20">
 
       <div
-        key={item.id}
-        id={item.id}
-        className="
-          relative w-full 
-          flex items-start sm:items-center justify-center
-          p-0 md:p-10
-          min-h-[65vh] sm:min-h-[50vh] md:min-h-screen
-          bg-cover bg-center bg-no-repeat
-          transition-all duration-700 ease-in-out
-        "
-        style={{
-          backgroundImage: `url(${
-            speakingId === item.id
-              ? item.bgImages?.[currentBg % item.bgImages.length]
-              : item.bgImages?.[0] || "/sample.jpg"
-          })`,
-        }}
-      >
+  key={item.id}
+  id={item.id}
+  className="
+    relative
+    w-full
+    flex
+    items-start
+    sm:items-center
+    justify-center
+
+    px-3
+    py-6
+
+    sm:px-5
+    sm:py-8
+
+    md:p-10
+
+    min-h-[70vh]
+    sm:min-h-[60vh]
+    md:min-h-screen
+
+    bg-cover
+    bg-center
+    bg-no-repeat
+
+    overflow-hidden
+
+    transition-all
+    duration-700
+    ease-in-out
+  "
+  style={{
+    backgroundImage: `url(${
+      speakingId === item.id
+        ? item.bgImages?.[currentBg % item.bgImages.length]
+        : item.bgImages?.[0] || "/sample.jpg"
+    })`,
+    backgroundPosition: "center center",
+  }}
+>
 
 
 
@@ -489,7 +512,7 @@ speakText(translatedDescription, item.id);
 
 
         {/* Previous */}
-      <button
+  <button
   type="button"
   onTouchStart={(e) => e.stopPropagation()}
   onClick={() =>
@@ -498,46 +521,63 @@ speakText(translatedDescription, item.id);
     )
   }
   className="
-    absolute left-5
+    absolute left-3 sm:left-5
     top-1/2 -translate-y-1/2
     z-50
-    bg-black
-    text-white
-    rounded-full
-    w-12 h-12
+    w-11 h-11 sm:w-12 sm:h-12
     flex items-center justify-center
-    text-xl
+    rounded-full
+    bg-black/70
+    text-white
+    shadow-lg
+    backdrop-blur-sm
+    transition-all duration-200
+    active:scale-90
+    hover:bg-black
+    hover:scale-110
+    animate-pulse
     touch-manipulation
-    active:scale-95
   "
+  aria-label="Previous section"
 >
-  ❮
+  <span className="text-2xl font-light transition-transform duration-200 active:-translate-x-1">
+    ‹
+  </span>
 </button>
 
 
 
         {/* Next */}
-   <button
+<button
   type="button"
+  onTouchStart={(e) => e.stopPropagation()}
   onClick={() => {
     console.log("button clicked");
     setActiveSection((prev) => (prev + 1) % sections.length);
   }}
   className="
-    absolute right-5
+    absolute right-3 sm:right-5
     top-1/2 -translate-y-1/2
     z-50
-    bg-black
-    text-white
-    rounded-full
-    w-12 h-12
+    w-11 h-11 sm:w-12 sm:h-12
     flex items-center justify-center
-    text-xl
+    rounded-full
+    bg-black/70
+    text-white
+    shadow-lg
+    backdrop-blur-sm
+    transition-all duration-200
+    active:scale-90
+    hover:bg-black
+    hover:scale-110
+    animate-pulse
     touch-manipulation
-    active:scale-95
   "
+  aria-label="Next section"
 >
-  ❯
+  <span className="text-2xl font-light transition-transform duration-200 active:translate-x-1">
+    ›
+  </span>
 </button>
 
 
