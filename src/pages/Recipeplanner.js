@@ -1177,9 +1177,9 @@ const Recipeplanner = () => {
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState("");
 
-const [ongenerate,setOngenerate] =useState(false)
+// const [ongenerate,setOngenerate] =useState(false)
 
-const [curdata,setCurdata]=useState("")
+// const [curdata,setCurdata]=useState("")
 
 const cachedata =localStorage.getItem("cacheddata")
 
@@ -1189,7 +1189,7 @@ const cachedata =localStorage.getItem("cacheddata")
 
 
 
-const [visibleWords, setVisibleWords] = useState([]);
+// const [visibleWords, setVisibleWords] = useState([]);
 
   const instructions = `
 1. Prepare the ingredients:
@@ -1217,15 +1217,15 @@ const [visibleWords, setVisibleWords] = useState([]);
   useEffect(() => {
     const words = instructions.split(" ");
 
-    setVisibleWords([]);
+    // setVisibleWords([]);
 
     words.forEach((word, index) => {
       setTimeout(() => {
-        setVisibleWords((prev) => [...prev, word]);
+        // setVisibleWords((prev) => [...prev, word]);
       }, index * 100);
     });
 
-  }, []);
+  });
 
 
 const content = [
@@ -1239,21 +1239,21 @@ const content = [
 
 
 const [index, setIndex] = useState(0);
-  const [animate, setAnimate] = useState(false);
+  // const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setAnimate(true);
+      // setAnimate(true);
 
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % content.length);
-        setAnimate(false);
+        // setAnimate(false);
       }, 300);
 
     }, 3000);
 
     return () => clearInterval(timer);
-  }, []);
+  });
 
 
 
@@ -1371,7 +1371,7 @@ const [currentQuote, setCurrentQuote] = useState(nutritionQuotes[0]);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  });
 
 
  const handlerecipegenerate = async () => {
@@ -1411,7 +1411,7 @@ try {
 
       console.log("API Response:", response.data);
 
-      let result = response.data;
+      // let result = response.data;
       localStorage.setItem(
   "cachedata",
   JSON.stringify(response.data)
@@ -1480,7 +1480,7 @@ return(
 
 <div className="relative min-h-screen overflow-hidden ">
 
-//   {/* Background Video */}
+
   <video
     ref={videoRef}
     autoPlay

@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar } from "./Navbar.js";
 import Recipeplanner from "./pages/Recipeplanner.js";
 import Nutrireads from "./pages/Nutrireads.js";
-import Nutriread from "./pages/Nutrireads.js";
+// import Nutriread from "./pages/Nutrireads.js";
 // import FoodStory from "./pages/FoodStory.js";
 import { Home } from "./Home.js";
 import FoodStory from "./Foodstory.js";
