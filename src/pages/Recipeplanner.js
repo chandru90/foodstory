@@ -1398,7 +1398,7 @@ console.log("recip",recipes)
 setLoading(true)
 try {
       const response = await axios.get(
-       " http://localhost:3006/recipes/generaterecipe",
+       " https://recipe-wnrc.onrender.com/recipes/generaterecipe",
         {
           params: {
             ingredient,
