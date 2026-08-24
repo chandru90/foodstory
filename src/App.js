@@ -22,137 +22,52 @@ const messages = { en, fr, ar, hi, ta,es };
 export default function App() {
   const [locale, setLocale] = useState("en");
 
-//   return (
+  return (
+    <Router>
+      <Navbar />
 
-// <>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-// <Router>
-//           <Navbar />
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//              <Route path="/generaterecipe" element={<Recipeplanner />} />
-//              {/* <Route path="/foodstory" element={<Foodstory/>} /> */}
-           
-//  <Route path="/nutrireads" element={<Nutrireads />} />
-        
-//             {/* <Route
-//               path="/saved-recipes"
-//               element={<ProtectedRoute element={<SavedRecipes />} />}
-//             /> */}
-//             {/* <Route path="/recipe/:recipeID" element={<RecipeDetail />} /> */}
-//             {/* <Route
-//               path="/saved-recipes"
-//               element={<ProtectedRoute element={<SavedRecipes />} />}
-//             /> */}
+        <Route
+          path="/generaterecipe"
+          element={<Recipeplanner />}
+        />
 
-          
-          
-//              </Routes> 
+        <Route
+          path="/foodstory"
+          element={
+            <IntlProvider
+              locale={locale}
+              messages={messages[locale]}
+            >
+              <div>
+                <select
+                  value={locale}
+                  onChange={(e) => setLocale(e.target.value)}
+                  className="hidden md:block"
+                >
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="es">Spanish</option>
+                  <option value="hi">Hindi</option>
+                  <option value="ta">Tamil</option>
+                </select>
 
-//         </Router>
+                <FoodStory locale={locale} />
+              </div>
+            </IntlProvider>
+          }
+        />
 
-
-
-
-
-//     <IntlProvider locale={locale} messages={messages[locale]}>
-//       <div>
-//       <select
-//         value={locale}
-//         onChange={(e) => setLocale(e.target.value)}
-//          className="hidden md:block"
-//       >
-//         <option value="en">English</option>
-//         <option value="fr">French</option>
-//         <option value="es">Spanish</option>
-//         <option value="hi">Hindi</option>
-//         <option value="ta">Tamil</option>
-//       </select>
-
-   
-
-  
-
-//   <FoodStory locale ={locale} />
-//   </div>
-// </IntlProvider> 
-//     </>
-//   );
-
-
-
-
-
-
-
-return (
-  <Router>
-    <Navbar />
-
-    <Routes>
-      <Route path="/" element={<Home />} />
-
-      <Route
-        path="/generaterecipe"
-        element={<Recipeplanner />}
-      />
-
-      <Route
-        path="/foodstory"
-        element={
-         <IntlProvider
-            locale={locale}
-            messages={messages["en"]}
-          >
-            <div>
-              {/* <select
-                value={locale}
-                onChange={(e) => setLocale(e.target.value)}
-                className="hidden md:block"
-              >
-                <option value="en">English</option>
-                <option value="fr">French</option>
-                <option value="es">Spanish</option>
-                <option value="hi">Hindi</option>
-                <option value="ta">Tamil</option>
-              </select> */}
-
-              <FoodStory locale={"en"} />
-            </div>
-         </IntlProvider>
-       }
-      />
-
-      <Route
-        path="/nutrireads"
-        element={<Nutrireads />}
-      />
-
-      {/* Future routes */}
-      {/* 
-      <Route
-        path="/saved-recipes"
-        element={<ProtectedRoute element={<SavedRecipes />} />}
-      />
-
-      <Route
-        path="/recipe/:recipeID"
-        element={<RecipeDetail />}
-      />
-      */}
-    </Routes>
-  </Router>
-);
-
-
-
-
-
-
-
+        <Route
+          path="/nutrireads"
+          element={<Nutrireads />}
+        />
+      </Routes>
+    </Router>
+  );
 }
-
-
 
 
 // import { useEffect } from "react";
