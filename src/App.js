@@ -100,12 +100,12 @@ return (
       <Route
         path="/foodstory"
         element={
-          <IntlProvider
+         <IntlProvider
             locale={locale}
-            messages={messages[locale]}
+            messages={messages["en"]}
           >
             <div>
-              <select
+              {/* <select
                 value={locale}
                 onChange={(e) => setLocale(e.target.value)}
                 className="hidden md:block"
@@ -115,12 +115,12 @@ return (
                 <option value="es">Spanish</option>
                 <option value="hi">Hindi</option>
                 <option value="ta">Tamil</option>
-              </select>
+              </select> */}
 
-              <FoodStory locale={locale} />
+              <FoodStory locale={"en"} />
             </div>
-          </IntlProvider>
-        }
+         </IntlProvider>
+       }
       />
 
       <Route

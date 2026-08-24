@@ -307,7 +307,7 @@ const Nutriread =()=>{
     const loadPosts = async () => {
       try {
         // First check localStorage
-        const cached = localStorage.getItem("cachedata");
+        const cached = localStorage.getItem("linkedinposts");
 
         if (cached) {
           const data = JSON.parse(cached);
@@ -328,7 +328,7 @@ const Nutriread =()=>{
 
         // Save to localStorage
         localStorage.setItem(
-          "cachedata",
+          "linkedinposts",
           JSON.stringify(data)
         );
 
