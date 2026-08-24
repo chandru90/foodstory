@@ -321,7 +321,7 @@ const Nutriread =()=>{
 
         // No cache → request API
         const response = await axios.get(
-          "http://localhost:5001/api"
+          "http://localhost:3006/linkedin"
         );
 
         const data = response.data.posts;

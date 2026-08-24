@@ -1,7 +1,7 @@
 
 
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { IntlProvider } from "react-intl";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar } from "./Navbar.js";
@@ -151,3 +151,58 @@ return (
 
 
 }
+
+
+
+
+// import { useEffect } from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// function App() {
+//   useEffect(() => {
+//     const addGoogleTranslate = () => {
+//       if (window.google?.translate) {
+//         new window.google.translate.TranslateElement(
+//           {
+//             pageLanguage: "en",
+//             includedLanguages: "en,fr,es,hi,ta",
+//             autoDisplay: false,
+//           },
+//           "google_translate_element"
+//         );
+//       }
+//     };
+
+//     window.googleTranslateElementInit = addGoogleTranslate;
+
+//     const script = document.createElement("script");
+//     script.src =
+//       "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+//     script.async = true;
+
+//     document.body.appendChild(script);
+
+//     return () => {
+//       document.body.removeChild(script);
+//       delete window.googleTranslateElementInit;
+//     };
+//   }, []);
+
+//   return (
+//     <Router>
+//       <Navbar />
+
+//       <div id="google_translate_element"></div>
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/generaterecipe" element={<Recipeplanner />} />
+//         <Route path="/foodstory" element={<FoodStory />} />
+//         <Route path="/nutrireads" element={<Nutrireads />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
