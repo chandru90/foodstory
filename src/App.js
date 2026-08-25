@@ -19,13 +19,44 @@ import fr from "./i18n/locales/fr/translaton.json";
 import es from "./i18n/locales/es/translaton.json";
 const messages = { en, fr, ar, hi, ta,es };
 
+
+
+
+
+
+
+
+// import { useEffect, useState } from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { IntlProvider } from "react-intl";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function App() {
   const [locale, setLocale] = useState("en");
 
   return (
     <Router>
+{/* 
+       <div
+        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+          hideNav ? "-translate-y-full" : "translate-y-0"
+        }`}
+      > */}
       <Navbar />
-
+{/* </div> */}
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -45,7 +76,7 @@ export default function App() {
                 <select
                   value={locale}
                   onChange={(e) => setLocale(e.target.value)}
-                  className="hidden md:block"
+                  className="hidden "
                 >
                   <option value="en">English</option>
                   <option value="fr">French</option>

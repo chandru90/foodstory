@@ -219,8 +219,9 @@ console.log("moving to next section")
             { id: "intro", bgImages: [ "foodstories.png"] },
 
 
-           {id: "intro",title: "intro.title", description: "intro.description" , "bgImages": [ "intro1/img1.jpg","intro1/img2.jpg","intro1/img3.jpg","intro1/img4.jpg","intro1/img5.jpg"] },
-   
+           {id: "intro",title: "intro.title", description: "intro.description" , "bgImages": [ "intro1/img1.jpg","intro1/img2.jpg","intro1/img3.jpg","intro1/img4.jpg","intro1/img5.jpg"] ,"mobbgImages": [ "responsive/img2.jpg","intro1/img2.jpg","intro1/img3.jpg","intro1/img4.jpg","intro1/img5.jpg"]},
+              
+
          {
   "id": "Mindful eating",
    "title": "mindfuleating.title",
@@ -475,7 +476,7 @@ return (
 
   return (
     <div className="relative rounded-2xl sm:p-0 p-6 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden mt-4  md:mt-10 ml-0 md:ml-10 mb-5 md:mb-20">
-
+{/* 
       <div
   key={item.id}
   id={item.id}
@@ -517,7 +518,95 @@ return (
     })`,
     backgroundPosition: "center center",
   }}
+> */}
+<div
+  key={item.id}
+  id={item.id}
+  className="
+    relative
+    w-full
+    flex
+    items-start
+    sm:items-center
+    justify-center
+
+    px-3
+    py-6
+
+    sm:px-5
+    sm:py-8
+
+    md:p-10
+
+    min-h-[70vh]
+    sm:min-h-[60vh]
+    md:min-h-screen
+
+    overflow-hidden
+
+    transition-all
+    duration-700
+    ease-in-out
+  "
 >
+  {/* =========================
+      MOBILE BACKGROUND
+      < 640px
+  ========================== */}
+  <div
+    className="
+      absolute
+      inset-0
+      z-0
+      bg-cover
+      bg-center
+      bg-no-repeat
+      sm:hidden
+      transition-all
+      duration-700
+      ease-in-out
+    "
+    style={{
+      backgroundImage: `url(${
+        speakingId === item.id
+          ? item.mobbgImages?.[
+              currentBg % (item.mobbgImages?.length || 1)
+            ]
+          : item.mobbgImages?.[0] || "/sample.jpg"
+      })`,
+      backgroundPosition: "center center",
+    }}
+  />
+
+  {/* =========================
+      DESKTOP BACKGROUND
+      >= 640px
+  ========================== */}
+  <div
+    className="
+      absolute
+      inset-0
+      z-0
+      hidden
+      sm:block
+      bg-cover
+      bg-center
+      bg-no-repeat
+      transition-all
+      duration-700
+      ease-in-out
+    "
+    style={{
+      backgroundImage: `url(${
+        speakingId === item.id
+          ? item.bgImages?.[
+              currentBg % (item.bgImages?.length || 1)
+            ]
+          : item.bgImages?.[0] || "/sample.jpg"
+      })`,
+      backgroundPosition: "center center",
+    }}
+  />
 
 
 
@@ -614,6 +703,7 @@ speakText(translatedDescription, item.id);
  <p
   style={{
     fontFamily: "Merriweather",
+    // fontFamily: 'Poppins', 
     fontSize: "1.5rem",
     fontWeight: 800,
     lineHeight: "2.2rem",

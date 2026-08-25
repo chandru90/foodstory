@@ -546,7 +546,7 @@ export const Home = () => {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const resp = await axios.get("http://localhost:5000/api");
+      const resp = await axios.get("https://recipe-wnrc.onrender.com/api");
 
       const posts = resp.data.posts;
 

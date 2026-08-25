@@ -543,28 +543,2994 @@ export const Home = () => {
 // })
 
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const resp = await axios.get("http://localhost:5000/api");
+// const cacheData = {
 
-      const posts = resp.data.posts;
 
-      // Store all posts in localStorage
-      localStorage.setItem(
-        "cachedata",
-        JSON.stringify(posts)
-      );
+//    "meal_plan": {
+//     "day_1": {
+//       "breakfast": {
+//         "recipe_name": "Coconut Banana Oatmeal Porridge Recipe",
+//         "calories": 350,
+//         "prep_time": "5 mins",
+//         "cook_time": "10 mins",
+//         "cooking_instructions": `
+// 1. Prepare the ingredients:
+//    - Wash and chop all vegetables.
+//    - Measure spices and keep all ingredients ready.
 
-      console.log("cachedata:", posts);
+// 2. Cook the base:
+//    - Heat 1 tablespoon of oil in a pan over medium heat.
+//    - Add onions and sauté until golden brown.
+//    - Add garlic, ginger, and spices. Cook for 1-2 minutes.
 
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+// 3. Add main ingredients:
+//    - Add the vegetables/protein and mix well.
+//    - Cook until the ingredients become tender.
 
-  fetchData();
-}, []);
+// 4. Final preparation:
+//    - Add seasoning and adjust salt according to taste.
+//    - Simmer for 5 minutes until flavors combine.
+
+// 5. Serve:
+//    - Garnish with fresh herbs.
+//    - Serve hot with your preferred side dish.
+// `            ,
+
+
+
+//          "ingridients":{
+//   "Chicken breast": "200g",
+//   "Brown rice": "1 cup cooked",
+//   "Olive oil": "1 tablespoon",
+//   "Garlic": "2 cloves, minced",
+//   "Onion": "1 medium, chopped",
+//   "Bell pepper": "1/2 cup sliced",
+//   "Broccoli": "1 cup",
+//   "Black pepper": "1/2 teaspoon",
+//   "Salt": "To taste",
+//   "Fresh parsley": "2 tablespoons chopped"
+// },
+       
+
+  
+
+
+// "macros": {
+//           "protein": "10g",
+//           "carbs": "55g",
+//           "fat": "12g"
+//         },
+      
+//   "addons": 
+//   {
+    
+//       "ingredient": "Boiled Eggs",
+//       "quantity": "2 pieces",
+//       "calories": "140 kcal"
+//   }  ,
+     
+  
+
+        
+//   "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "lunch": {
+//         "recipe_name": "Foxtail Millet Pilaf Recipe",
+//         "calories": 420,
+//         "prep_time": "15 mins",
+//         "cook_time": "20 mins",
+//         "macros": {
+//           "protein": "12g",
+//           "carbs": "65g",
+//           "fat": "14g"
+//         }
+//       },
+//       "healthy_snack": {
+//         "recipe_name": "Kachumber Salad Recipe With Cucumber, Onion & Tomatoes",
+//         "calories": 80,
+//         "prep_time": "10 mins",
+//         "cook_time": "0 mins",
+//         "macros": {
+//           "protein": "2g",
+//           "carbs": "15g",
+//           "fat": "1g"
+//         }
+//       },
+//       "dinner": {
+//         "recipe_name": "Baingan Sarson Ka Saag Recipe",
+//         "calories": 310,
+//         "prep_time": "15 mins",
+//         "cook_time": "30 mins",
+//         "macros": {
+//           "protein": "8g",
+//           "carbs": "30g",
+//           "fat": "18g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       summary:{
+//         total_calories:"",
+//         dv :"",
+//         Protiens_dv:"",
+//         carbs_dv:"",
+//         fats_dv:"",
+//         fiber_dv:"",
+//       }
+//     },
+//     "day_2": {
+//       "breakfast": {
+//         "recipe_name": "Vegetable Upma",
+//         "calories": 340,
+//         "prep_time": "10 mins",
+//         "cook_time": "15 mins",
+//         "macros": {
+//           "protein": "9g",
+//           "carbs": "48g",
+//           "fat": "11g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "lunch": {
+//         "recipe_name": "Brown Rice Vegetable Sambar",
+//         "calories": 450,
+//         "prep_time": "20 mins",
+//         "cook_time": "30 mins",
+//         "macros": {
+//           "protein": "15g",
+//           "carbs": "62g",
+//           "fat": "12g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "healthy_snack": {
+//         "recipe_name": "Roasted Chickpeas",
+//         "calories": 120,
+//         "prep_time": "5 mins",
+//         "cook_time": "20 mins",
+//         "macros": {
+//           "protein": "6g",
+//           "carbs": "18g",
+//           "fat": "2g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "dinner": {
+//         "recipe_name": "Palak Dal",
+//         "calories": 360,
+//         "prep_time": "15 mins",
+//         "cook_time": "25 mins",
+//         "macros": {
+//           "protein": "16g",
+//           "carbs": "35g",
+//           "fat": "10g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       }
+//     },
+//     "day_3": {
+//       "breakfast": {
+//         "recipe_name": "Ragi Dosa",
+//         "calories": 320,
+//         "prep_time": "10 mins",
+//         "cook_time": "15 mins",
+//         "macros":{
+//           "protein": "8g",
+//           "carbs": "46g",
+//           "fat": "10g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "lunch": {
+//         "recipe_name": "Vegetable Quinoa Bowl",
+//         "calories": 430,
+//         "prep_time": "15 mins",
+//         "cook_time": "20 mins",
+//         "macros": {
+//           "protein": "18g",
+//           "carbs": "52g",
+//           "fat": "13g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "healthy_snack": {
+//         "recipe_name": "Fruit Chaat",
+//         "calories": 100,
+//         "prep_time": "10 mins",
+//         "cook_time": "0 mins",
+//         "macros": {
+//           "protein": "2g",
+//           "carbs": "24g",
+//           "fat": "0g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "dinner": {
+//         "recipe_name": "Mixed Vegetable Curry",
+//         "calories": 340,
+//         "prep_time": "15 mins",
+//         "cook_time": "25 mins",
+//         "macros": {
+//           "protein": "10g",
+//           "carbs": "28g",
+//           "fat": "16g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       }
+//     },
+//     "day_4": {
+//       "breakfast": {
+//         "recipe_name": "Poha With Peanuts",
+//         "calories": 330,
+//         "prep_time": "10 mins",
+//         "cook_time": "15 mins",
+//         "macros": {
+//           "protein": "9g",
+//           "carbs": "50g",
+//           "fat": "11g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "lunch": {
+//         "recipe_name": "Rajma Brown Rice",
+//         "calories": 470,
+//         "prep_time": "20 mins",
+//         "cook_time": "35 mins",
+//         "macros": {
+//           "protein": "18g",
+//           "carbs": "68g",
+//           "fat": "10g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "healthy_snack": {
+//         "recipe_name": "Greek Yogurt With Berries",
+//         "calories": 130,
+//         "prep_time": "5 mins",
+//         "cook_time": "0 mins",
+//         "macros": {
+//           "protein": "8g",
+//           "carbs": "14g",
+//           "fat": "3g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "dinner": {
+//         "recipe_name": "Vegetable Soup",
+//         "calories": 280,
+//         "prep_time": "10 mins",
+//         "cook_time": "20 mins",
+//         "macros": {
+//           "protein": "9g",
+//           "carbs": "22g",
+//           "fat": "9g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       }
+//     },
+//     "day_5": {
+//       "breakfast": {
+//         "recipe_name": "Vegetable Idli",
+//         "calories": 310,
+//         "prep_time": "15 mins",
+//         "cook_time": "20 mins",
+//         "macros": {
+//           "protein": "9g",
+//           "carbs": "48g",
+//           "fat": "8g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "lunch": {
+//         "recipe_name": "Chickpea Salad",
+//         "calories": 400,
+//         "prep_time": "15 mins",
+//         "cook_time": "10 mins",
+//         "macros": {
+//           "protein": "17g",
+//           "carbs": "45g",
+//           "fat": "12g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "healthy_snack": {
+//         "recipe_name": "Mixed Nuts",
+//         "calories": 150,
+//         "prep_time": "0 mins",
+//         "cook_time": "0 mins",
+//         "macros": {
+//           "protein": "5g",
+//           "carbs": "6g",
+//           "fat": "13g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "dinner": {
+//         "recipe_name": "Paneer Bhurji",
+//         "calories": 390,
+//         "prep_time": "10 mins",
+//         "cook_time": "20 mins",
+//         "macros": {
+//           "protein": "22g",
+//           "carbs": "12g",
+//           "fat": "24g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       }
+//     },
+//     "day_6": {
+//       "breakfast": {
+//         "recipe_name": "Avocado Toast",
+//         "calories": 340,
+//         "prep_time": "10 mins",
+//         "cook_time": "5 mins",
+//         "macros": {
+//           "protein": "8g",
+//           "carbs": "35g",
+//           "fat": "18g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "lunch": {
+//         "recipe_name": "Vegetable Khichdi",
+//         "calories": 410,
+//         "prep_time": "15 mins",
+//         "cook_time": "25 mins",
+//         "macros": {
+//           "protein": "15g",
+//           "carbs": "55g",
+//           "fat": "10g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "healthy_snack": {
+//         "recipe_name": "Apple With Peanut Butter",
+//         "calories": 160,
+//         "prep_time": "5 mins",
+//         "cook_time": "0 mins",
+//         "macros": {
+//           "protein": "5g",
+//           "carbs": "20g",
+//           "fat": "8g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "dinner": {
+//         "recipe_name": "Stuffed Bell Peppers",
+//         "calories": 360,
+//         "prep_time": "20 mins",
+//         "cook_time": "30 mins",
+//         "macros": {
+//           "protein": "14g",
+//           "carbs": "30g",
+//           "fat": "14g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       }
+//     },
+//     "day_7": {
+//       "breakfast": {
+//         "recipe_name": "Besan Chilla",
+//         "calories": 330,
+//         "prep_time": "10 mins",
+//         "cook_time": "15 mins",
+//         "macros": {
+//           "protein": "14g",
+//           "carbs": "30g",
+//           "fat": "12g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "lunch": {
+//         "recipe_name": "Vegetable Biryani",
+//         "calories": 480,
+//         "prep_time": "20 mins",
+//         "cook_time": "35 mins",
+//         "macros": {
+//           "protein": "12g",
+//           "carbs": "72g",
+//           "fat": "15g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "healthy_snack": {
+//         "recipe_name": "Carrot & Cucumber Sticks",
+//         "calories": 70,
+//         "prep_time": "10 mins",
+//         "cook_time": "0 mins",
+//         "macros": {
+//           "protein": "2g",
+//           "carbs": "12g",
+//           "fat": "1g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       },
+//       "dinner": {
+//         "recipe_name": "Lentil Soup",
+//         "calories": 340,
+//         "prep_time": "15 mins",
+//         "cook_time": "30 mins",
+//         "macros": {
+//           "protein": "18g",
+//           "carbs": "38g",
+//           "fat": "8g"
+//         }, "vitamins": {
+//     "vitamin_a": {
+//       "amount": 900,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_c": {
+//       "amount": 90,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_d": {
+//       "amount": 20,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_e": {
+//       "amount": 15,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_k": {
+//       "amount": 120,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "thiamin_b1": {
+//       "amount": 1.2,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "riboflavin_b2": {
+//       "amount": 1.3,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "niacin_b3": {
+//       "amount": 16,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b6": {
+//       "amount": 1.7,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "folate_b9": {
+//       "amount": 400,
+//       "unit": "mcg DFE",
+//       "percent_daily_value": 100
+//     },
+//     "vitamin_b12": {
+//       "amount": 2.4,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     }
+//   },
+//   "minerals": {
+//     "calcium": {
+//       "amount": 200,
+//       "unit": "mg",
+//       "percent_daily_value": 15
+//     },
+//     "iron": {
+//       "amount": 18,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "phosphorus": {
+//       "amount": 125,
+//       "unit": "mg",
+//       "percent_daily_value": 10
+//     },
+//     "iodine": {
+//       "amount": 150,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "magnesium": {
+//       "amount": 420,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "zinc": {
+//       "amount": 11,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     },
+//     "selenium": {
+//       "amount": 55,
+//       "unit": "mcg",
+//       "percent_daily_value": 100
+//     },
+//     "copper": {
+//       "amount": 0.9,
+//       "unit": "mg",
+//       "percent_daily_value": 100
+//     }
+  
+// }
+//       }
+//     }
+//   }
+// }
+//   localStorage.setItem('cachedata',JSON.stringify(cacheData) )
+// useEffect(() => {
+//   const fetchData = async () => {
+//     try {
+//       const resp = await axios.get("http://localhost:5000/api");
+
+//       const posts = resp.data.posts;
+
+//       // Store all posts in localStorage
+//       localStorage.setItem(
+//         "cachedata",
+//         JSON.stringify(posts)
+//       );
+
+//       console.log("cachedata:", posts);
+
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   };
+
+//   fetchData();
+// }, []);
 
 
 

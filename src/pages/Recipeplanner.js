@@ -1397,8 +1397,8 @@ console.log("recip",recipes)
    
 setLoading(true)
 try {
-      const response = await axios.get(
-       " https://recipe-wnrc.onrender.com/recipes/generaterecipe",
+      const response = await axios.get("https://recipe-wnrc.onrender.com/recipes/generaterecipe",
+      // const response = await axios.get("http://localhost:3006/recipes/generaterecipe",
         {
           params: {
             ingredient,
@@ -1683,8 +1683,8 @@ return(
 
 
 
-
-
+{/* replaced */}
+{/* 
       <div
 
         style={{
@@ -1698,10 +1698,13 @@ return(
 
         }}
 
-      >
+      > */}
 
- <div className="space-y-12">
 
+      <div className="w-full px-3 sm:px-4 lg:px-6">
+
+ {/* <div className="space-y-12"> */}
+<div className="w-full max-w-[1600px] mx-auto space-y-8 sm:space-y-12">
   {recipes.map((day, index) => (
 
 <div
@@ -1794,6 +1797,8 @@ to-teal-500
 p-2
 text-white
 flex
+flex-col
+md:flex-row
 justify-between
 items-center
 "
@@ -1904,59 +1909,23 @@ font-black
 
 
 
-<div className="flex md :flex-rows gap-10">
+<div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full px-4 sm:px-6 lg:px-0">
 
+  {/* ================= LEFT COLUMN ================= */}
+  <div className="flex flex-col gap-8 lg:gap-10 w-full lg:w-[25%] lg:ml-6">
 
-
-<div className="flex flex-col  gap-20 w-[25%] ml-10">
-{/* <div className="
-bg-blue-50
-rounded-3xl
-p-6
-border
-border-blue-100
-mt-10
+    {/* Macro Cards */}
+    <div className="
+  grid
+  grid-cols-1
+  md:grid-cols-2
+  gap-3
+  sm:gap-4
+  mt-4
+  lg:mt-6
+  justify-items-center
+  md:justify-items-stretch
 ">
-
-<div className="mt-6">
-  <h4 className="text-xl font-bold text-gray-800 mb-4">
-    🥗 Nutrition Facts
-  </h4>
-
-  <div className="grid grid-cols-2 md:grid-rows-2 gap-4">
-    <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 text-center shadow-sm">
-      <p className="text-sm text-gray-500 font-medium">Carbs</p>
-      <p className="text-2xl font-bold text-emerald-700">
-        {day[meal]?.macros?.carbs || "-"}
-      </p>
-    </div>
-
-    <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-center shadow-sm">
-      <p className="text-sm text-gray-500 font-medium">Protein</p>
-      <p className="text-2xl font-bold text-blue-700">
-        {day[meal]?.macros?.protein || "-"}
-      </p>
-    </div>
-
-    <div className="bg-orange-50 border border-orange-100 rounded-2xl p-4 text-center shadow-sm">
-      <p className="text-sm text-gray-500 font-medium">Fat</p>
-      <p className="text-2xl font-bold text-orange-700">
-        {day[meal]?.macros?.fat || "-"}
-      </p>
-    </div>
-
-    <div className="bg-purple-50 border border-purple-100 rounded-2xl p-4 text-center shadow-sm">
-      <p className="text-sm text-gray-500 font-medium">Fiber</p>
-      <p className="text-2xl font-bold text-purple-700">
-        {day[meal]?.macros?.fiber || "-"}
-      </p>
-    </div>
-  </div>
-</div>
-
-</div> */}
-
-<div className="md:grid md:grid-cols-2 flex flex-rows  md:gap-4  gap-32 mt-6">
   {[
     {
       title: "Protein",
@@ -1987,29 +1956,85 @@ mt-10
       message: "Healthy fats for your body",
     },
   ].map((item, index) => (
-    <div key={item.title} className="[perspective:1000px]">
+    <div
+      key={item.title}
+      className="
+      
+        [perspective:1000px]
+        w-full
+        flex
+        justify-center
+      "
+    >
       <div
-        className="relative h-40 animate-continuous-flip"
+        className="
+          relative
+          h-32
+          w-[220px]
+          sm:h-40
+          sm:w-full
+          animate-continuous-flip
+        "
         style={{
-          animationDelay: `${index * 2}s`, // 0s, 2s, 4s, 6s
+          animationDelay: `${index * 5}s`,
         }}
       >
         {/* Front */}
         <div
-          className={`absolute inset-0 rounded-2xl border shadow-md flex flex-col justify-center items-center ${item.color} [backface-visibility:hidden]`}
+          className={`
+            absolute inset-0
+            rounded-2xl
+            border
+            shadow-md
+            flex flex-col
+            justify-center
+            items-center
+            text-center
+            ${item.color}
+            [backface-visibility:hidden]
+          `}
         >
-          <p className="text-4xl">{item.emoji}</p>
-          <p className="text-sm text-gray-500 mt-2">{item.title}</p>
-          <p className="text-3xl font-bold">{item.value}</p>
+          <p className="text-2xl sm:text-4xl">
+            {item.emoji}
+          </p>
+
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+            {item.title}
+          </p>
+
+          <p className="text-xl sm:text-3xl font-bold">
+            {item.value}
+          </p>
         </div>
 
         {/* Back */}
         <div
-          className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 text-white flex flex-col justify-center items-center [transform:rotateY(180deg)] [backface-visibility:hidden]"
+          className="
+            absolute inset-0
+            rounded-2xl
+            bg-gradient-to-br
+            from-emerald-500
+            to-green-700
+            text-white
+            flex flex-col
+            justify-center
+            items-center
+            text-center
+            p-2
+            sm:p-3
+            [transform:rotateY(180deg)]
+            [backface-visibility:hidden]
+          "
         >
-          <p className="text-2xl mb-2">{item.emoji}</p>
-          <h3 className="text-xl font-bold">{item.title}</h3>
-          <p className="text-center px-4 mt-2 text-sm">
+          <p className="text-lg sm:text-2xl mb-1">
+            {item.emoji}
+          </p>
+
+          <h3 className="text-sm sm:text-xl font-bold">
+            {item.title}
+          </h3>
+
+          <p className="text-[10px] sm:text-sm px-1 mt-1">
             {item.message}
           </p>
         </div>
@@ -2018,411 +2043,599 @@ mt-10
   ))}
 </div>
 
+    {/* ================= VITAMINS / MINERALS ================= */}
+    <div
+      className="
+        relative
+        w-full
+        h-auto
+        lg:h-[700px]
+        [transform-style:preserve-3d]
+        transition-transform
+        duration-700
+        hover:[transform:rotateY(180deg)]
+      "
+    >
 
-   
- 
-  <div className="relative md:h-[700px] w-full transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
-
-
-    <div className="absolute inset-0 backface-hidden rounded-3xl">
-      {/* Vitamins Card */}
-      <div className="h-full grid grid-cols-1 px-6 py-5 bg-gradient-to-r from-emerald-500 to-green-600 rounded-3xl shadow-xl mb-10">
-         <h2 className="text-2xl font-bold text-white flex items-center gap-2">           🥬 Vitamins
-       </h2>
-
-     <div className="rounded-2xl p-4 shadow-sm font-semibold text-green-800">
-       <div className="flex gap-10 bg-green-900 p-4 rounded-2xl text-white">
-                    <h1>Vitamin</h1>
-             <h1 className="text-center">mcg</h1>
-            <h1 className="ml-auto">DV</h1>
-         </div>
-         </div>
-
-        <div className="">
-          {Object.entries(day[meal]?.vitamins || {}).map(([key, vitamin]) => (
-            <div
-               key={key}
-              className="grid grid-cols-3 items-center bg-green-50 border border-green-100 rounded-xl mt-2 p-2 shadow-sm"
-           >
-               <h3 className="font-bold text-green-700 capitalize">
-                {key.replaceAll("_", " ")}
-               </h3>
-
-
-
-              <p className="text-center text-gray-700">
-                 {vitamin.amount}
-              </p>
-
-              <p className="text-right text-green-700 font-semibold">
-                {vitamin.percent_daily_value}
-               </p>
-            </div>
-           ))}
-        </div>
-
-      </div>
-     </div>
-
-    {/* BACK - Minerals */}
-    <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-3xl">
-       <div className="h-full bg-gradient-to-br from-green-500 to-cyan-500 rounded-3xl border border-blue-100 shadow-xl p-6">
-
-         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-white text-2xl">
-             💎
-           </div>
-          <div>
-             <h2 className="text-2xl font-bold text-gray-800">
-               Minerals
-            </h2>
-            <p className="text-sm text-gray-500">
-               Essential micronutrients in this meal
-            </p>
-           </div>
-      </div>
-
-         <div className="space-y-4 overflow-y-auto">
-          {Object.entries(day[meal]?.minerals || {}).map(
-             ([key, mineral]) => (
-               <div
-                key={key}
-                 className="rounded-2xl border border-gray-100 bg-gradient-to-r from-blue-50 to-white p-2 shadow-sm"
-              >
-                 <div className="flex items-center justify-between">
-                   <h3 className="text-lg font-semibold capitalize">
-                     {key.replaceAll("_", " ")}
-                   </h3>
-
-                  <span className="rounded-full b px-4 y-1 text-sm font-bold text-blue-700">/                     {mineral.amount} mcg
-                   </span>
-
-                   <span className="font-semibold text-blue-700">
-                     {mineral.percent_daily_value}%
-                   </span>
-                 </div>
-               </div>
-             )
-           )}
-         </div>
-
-       </div>
-     </div>
-
-   </div>
- </div>
-
-
-
-
-
-
-
-
-
-<div className="flex flex-col ">
-  <div className="bg-green-200 rounded-3xl shadow-lg border border-orange-100 p-6 mt-10 mr-4">
-  {/* Header */}
-  <div className="flex items-center gap-3 mb-6">
-    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-2xl shadow-md">
-      🥗
-    </div>
-
-    <div>
-      <h4 className="text-2xl font-bold text-gray-800 mt-10 ml-10">
-        Ingredients
-      </h4>
-      <p className="text-sm text-gray-500">
-        Everything you need for this meal
-      </p>
-    </div>
-  </div>
-<div>
-  {/* Ingredients List */}
- <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-  {Object.entries(day[meal]?.ingridients || {}).map(
-    ([ingredient, quantity], i) => (
+      {/* Vitamins */}
       <div
-        key={i}
-        className="group flex items-center justify-between rounded-2xl border border-gray-200 bg-gradient-to-r from-orange-50 to-white p-1 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-300"
+        className="
+          relative
+          lg:absolute
+          lg:inset-0
+          rounded-3xl
+          overflow-hidden
+          [backface-visibility:hidden]
+        "
       >
-        <div className="flex items-center gap-2">
-          <div className="flex h-2 w-2 items-center justify-center rounded-full bg-green-500 text-white">
-            ✓
+        <div
+          className="
+            min-h-[500px]
+            lg:h-full
+            px-4
+            sm:px-6
+            py-5
+            bg-gradient-to-r
+            from-emerald-500
+            to-green-600
+            rounded-3xl
+            shadow-xl
+          "
+        >
+          <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+            🥬 Vitamins
+          </h2>
+
+          {/* Header */}
+          <div className="mt-5 rounded-2xl overflow-hidden">
+            <div
+              className="
+                grid
+                grid-cols-3
+                gap-2
+                bg-green-900
+                p-3
+                sm:p-4
+                text-white
+                text-xs
+                sm:text-sm
+                font-semibold
+              "
+            >
+              <h1>Vitamin</h1>
+              <h1 className="text-center">Amount</h1>
+              <h1 className="text-right">DV</h1>
+            </div>
           </div>
 
-          <div>
-            <p className="font-semibold text-gray-800">
-              {ingredient}
-            </p>
-          
+          {/* Vitamins */}
+          <div className="mt-2">
+            {Object.entries(day[meal]?.vitamins || {}).map(
+              ([key, vitamin]) => (
+                <div
+                  key={key}
+                  className="
+                    grid
+                    grid-cols-3
+                    items-center
+                    gap-2
+                    bg-green-50
+                    border
+                    border-green-100
+                    rounded-xl
+                    mt-2
+                    p-2
+                    sm:p-3
+                    shadow-sm
+                    text-xs
+                    sm:text-sm
+                  "
+                >
+                  <h3 className="font-bold text-green-700 capitalize break-words">
+                    {key.replaceAll("_", " ")}
+                  </h3>
+
+                  <p className="text-center text-gray-700 break-words">
+                    {vitamin.amount}
+                  </p>
+
+                  <p className="text-right text-green-700 font-semibold">
+                    {vitamin.percent_daily_value}
+                  </p>
+                </div>
+              )
+            )}
           </div>
         </div>
-
-        <span className="rounded-full bg-green-100 px-4 py-2 text-sm font-bold text-green-700">
-          {quantity}
-        </span>
       </div>
-    )
-  )}
-</div>
 
-  {/* Empty State */}
-  {Object.keys(day[meal]?.ingridients || {}).length === 0 && (
-    <div className="rounded-2xl border border-dashed border-gray-300 py-10 text-center">
-      <p className="text-gray-500">No ingredients available.</p>
-    </div>
-  )}
-</div>
-<div className="space-y-10 " >
+      {/* Minerals */}
+      <div
+        className="
+          mt-6
+          lg:mt-0
+          lg:absolute
+          lg:inset-0
+          rounded-3xl
+          lg:[transform:rotateY(180deg)]
+          [backface-visibility:hidden]
+        "
+      >
+        <div
+          className="
+            min-h-[500px]
+            lg:h-full
+            bg-gradient-to-br
+            from-green-500
+            to-cyan-500
+            rounded-3xl
+            border
+            border-blue-100
+            shadow-xl
+            p-4
+            sm:p-6
+          "
+        >
 
-  {/* Cooking Instructions */}
- <section className="
-  // mt-10
-  // rounded-3xl
-  // border
-  // border-gray-100
-  // bg-green-100
-  // p-6
-  // sm:p-8
-  // shadow-lg
-  lg:absolute
-      
-      lg:top-['540px']
-      lg:w-[840px]
-      mt-20
+          <div className="flex items-center gap-3 mb-5">
+            <div
+              className="
+                w-10 h-10
+                sm:w-12 sm:h-12
+                rounded-2xl
+                bg-white/20
+                flex
+                items-center
+                justify-center
+                text-xl
+                sm:text-2xl
+              "
+            >
+              💎
+            </div>
 
-">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white">
+                Minerals
+              </h2>
 
-  {/* Header */}
-  <div className="flex items-center gap-4 mb-6">
-    <div className="
-      flex
-      h-14
-      w-14
-      shrink-0
-      items-center
-      justify-center
-      rounded-2xl
-      bg-orange-100
-      text-3xl
-    ">
-      👨‍🍳
-    </div>
+              <p className="text-xs sm:text-sm text-white/80">
+                Essential micronutrients in this meal
+              </p>
+            </div>
+          </div>
 
-    <div>
-      <h4 className="text-2xl font-bold text-gray-900">
-        Cooking Instructions
-      </h4>
-      <p className="text-sm text-gray-500">
-        Follow these steps to prepare your meal.
-      </p>
+          <div className="space-y-3 lg:space-y-4 lg:max-h-[580px] lg:overflow-y-auto">
+            {Object.entries(day[meal]?.minerals || {}).map(
+              ([key, mineral]) => (
+                <div
+                  key={key}
+                  className="
+                    rounded-2xl
+                    border
+                    border-gray-100
+                    bg-gradient-to-r
+                    from-blue-50
+                    to-white
+                    p-3
+                    sm:p-4
+                    shadow-sm
+                  "
+                >
+                  <div
+                    className="
+                      flex
+                      flex-col
+                      sm:flex-row
+                      sm:items-center
+                      sm:justify-between
+                      gap-2
+                    "
+                  >
+                    <h3 className="text-sm sm:text-lg font-semibold capitalize">
+                      {key.replaceAll("_", " ")}
+                    </h3>
+
+                    <div className="flex items-center justify-between sm:justify-end gap-3">
+                      <span
+                        className="
+                          rounded-full
+                          bg-blue-100
+                          px-3
+                          py-1
+                          text-xs
+                          sm:text-sm
+                          font-bold
+                          text-blue-700
+                        "
+                      >
+                        {mineral.amount} mcg
+                      </span>
+
+                      <span className="font-semibold text-blue-700 text-sm">
+                        {mineral.percent_daily_value}%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
 
-  {/* Instructions */}
-  <div className="
-    w-full
-    rounded-2xl
-    border
-    border-orange-100
-    bg-gradient-to-br
-    from-white
-    via-orange-50
-    to-amber-50
-    p-5
-    sm:p-6
-  ">
-  {/* <p
-    className="
-      absolute
-      top-5
-      left-5
-      right-5
-      text-gray-700
-      leading-8
-      whitespace-pre-line
-      text-base
-      sm:text-lg
-    "
-  > */}
-  <p>
-    {JSON.stringify(day[meal]?.cooking_instructions, null, 2)}
-  </p>
-  </div>
+  {/* ================= RIGHT COLUMN ================= */}
+  <div className="flex flex-col w-full lg:w-[75%]">
 
-
-  {/* Addons */}
-  {day[meal]?.addons && (
-    <div className="mt-10">
-
-      <div className="
+    {/* Ingredients */}
+    <div
+      className="
+        bg-green-200
         rounded-3xl
+        shadow-lg
         border
         border-orange-100
-        bg-gradient-to-br
-        from-white
-        via-orange-50
-        to-amber-50
         p-4
         sm:p-6
-      ">
+        mt-4
+        lg:mt-10
+        w-full
+      "
+    >
 
-        {/* Addon Header */}
-        <div className="
-          flex
-          flex-col
-          gap-4
-          sm:flex-row
-          sm:items-center
-          sm:justify-between
-        ">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-6">
+        <div
+          className="
+            w-10 h-10
+            sm:w-12 sm:h-12
+            rounded-2xl
+            bg-gradient-to-br
+            from-orange-400
+            to-orange-600
+            flex
+            items-center
+            justify-center
+            text-xl
+            sm:text-2xl
+            shadow-md
+            shrink-0
+          "
+        >
+          🥗
+        </div>
 
-          <div className="flex items-center gap-4">
-            <div className="
+        <div>
+          <h4 className="text-xl sm:text-2xl font-bold text-gray-800">
+            Ingredients
+          </h4>
+
+          <p className="text-xs sm:text-sm text-gray-500">
+            Everything you need for this meal
+          </p>
+        </div>
+      </div>
+
+      {/* Ingredients List */}
+      <div
+        className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-3
+          sm:gap-4
+          mt-6
+        "
+      >
+        {Object.entries(day[meal]?.ingridients || {}).map(
+          ([ingredient, quantity], i) => (
+            <div
+              key={i}
+              className="
+                group
+                flex
+                items-center
+                justify-between
+                gap-2
+                rounded-2xl
+                border
+                border-gray-200
+                bg-gradient-to-r
+                from-orange-50
+                to-white
+                p-3
+                shadow-sm
+                transition-all
+                duration-300
+                hover:shadow-lg
+                hover:-translate-y-1
+                hover:border-orange-300
+              "
+            >
+              <div className="flex items-center gap-2 min-w-0">
+                <div
+                  className="
+                    flex
+                    h-5
+                    w-5
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-green-500
+                    text-white
+                    text-xs
+                  "
+                >
+                  ✓
+                </div>
+
+                <p className="font-semibold text-gray-800 text-sm truncate">
+                  {ingredient}
+                </p>
+              </div>
+
+              <span
+                className="
+                  shrink-0
+                  rounded-full
+                  bg-green-100
+                  px-3
+                  py-1
+                  text-xs
+                  sm:text-sm
+                  font-bold
+                  text-green-700
+                "
+              >
+                {quantity}
+              </span>
+            </div>
+          )
+        )}
+      </div>
+
+      {/* Empty State */}
+      {Object.keys(day[meal]?.ingridients || {}).length === 0 && (
+        <div className="rounded-2xl border border-dashed border-gray-300 py-10 text-center">
+          <p className="text-gray-500">
+            No ingredients available.
+          </p>
+        </div>
+      )}
+
+
+      {/* ================= COOKING ================= */}
+      <section className="mt-8 sm:mt-10 w-full">
+
+        {/* Header */}
+        <div className="flex items-center gap-3 sm:gap-4 mb-5">
+          <div
+            className="
               flex
-              h-14
-              w-14
+              h-12 w-12
+              sm:h-14 sm:w-14
+              shrink-0
               items-center
               justify-center
               rounded-2xl
               bg-orange-100
               text-2xl
-            ">
-              🥣
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold text-gray-900">
-                Add-ons
-              </h3>
-              <p className="text-sm text-gray-500">
-                Extra ingredients for this meal
-              </p>
-            </div>
+              sm:text-3xl
+            "
+          >
+            👨‍🍳
           </div>
 
+          <div>
+            <h4 className="text-xl sm:text-2xl font-bold text-gray-900">
+              Cooking Instructions
+            </h4>
 
-          <span className="
-            w-fit
-            rounded-full
-            bg-orange-500
-            px-4
-            py-2
-            text-xs
-            font-semibold
-            uppercase
-            text-white
-          ">
-            Extra
-          </span>
-
-        </div>
-
-
-        {/* Addon Table */}
-        <div className="
-          mt-8
-          overflow-hidden
-          rounded-2xl
-          border
-          border-gray-100
-          bg-white
-        ">
-
-          {/* Header */}
-          <div className="
-            grid
-            grid-cols-[2fr_1fr_auto]
-            gap-4
-            bg-gray-50
-            px-5
-            py-3
-            text-sm
-            font-semibold
-            text-gray-500
-          ">
-            <span>Ingredient</span>
-            <span className="text-center">Quantity</span>
-            <span className="text-right">Calories</span>
-          </div>
-
-
-          {/* Row */}
-          <div className="
-            grid
-            grid-cols-[2fr_1fr_auto]
-            items-center
-            gap-4
-            px-5
-            py-5
-          ">
-
-            <p className="truncate font-semibold text-gray-900">
-              {day[meal].addons.ingredient}
+            <p className="text-xs sm:text-sm text-gray-500">
+              Follow these steps to prepare your meal.
             </p>
-
-
-            <span className="
-              justify-self-center
-              rounded-lg
-              bg-blue-50
-              px-3
-              py-1
-              text-sm
-              font-semibold
-              text-blue-700
-            ">
-              {day[meal].addons.quantity}
-            </span>
-
-
-            <span className="
-              justify-self-end
-              rounded-full
-              bg-green-100
-              px-3
-              py-1
-              text-sm
-              font-bold
-              text-green-700
-            ">
-              🔥 {day[meal].addons.cal} kcal
-            </span>
-
           </div>
-
         </div>
 
-      </div>
+        {/* Instructions */}
+        <div
+          className="
+            w-full
+            rounded-2xl
+            border
+            border-orange-100
+            bg-gradient-to-br
+            from-white
+            via-orange-50
+            to-amber-50
+            p-4
+            sm:p-6
+            overflow-x-auto
+          "
+        >
+          <p className="text-sm sm:text-base text-gray-700 leading-7 whitespace-pre-line break-words">
+            {JSON.stringify(
+              day[meal]?.cooking_instructions,
+              null,
+              2
+            )}
+          </p>
+        </div>
 
+
+        {/* ================= ADDONS ================= */}
+        {day[meal]?.addons && (
+          <div className="mt-6 sm:mt-10">
+
+            <div
+              className="
+                rounded-3xl
+                border
+                border-orange-100
+                bg-gradient-to-br
+                from-white
+                via-orange-50
+                to-amber-50
+                p-4
+                sm:p-6
+              "
+            >
+
+              {/* Addon Header */}
+              <div
+                className="
+                  flex
+                  flex-col
+                  gap-4
+                  sm:flex-row
+                  sm:items-center
+                  sm:justify-between
+                "
+              >
+
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div
+                    className="
+                      flex
+                      h-12 w-12
+                      sm:h-14 sm:w-14
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      bg-orange-100
+                      text-2xl
+                    "
+                  >
+                    🥣
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900">
+                      Add-ons
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-gray-500">
+                      Extra ingredients for this meal
+                    </p>
+                  </div>
+                </div>
+
+                <span
+                  className="
+                    w-fit
+                    rounded-full
+                    bg-orange-500
+                    px-4
+                    py-2
+                    text-xs
+                    font-semibold
+                    uppercase
+                    text-white
+                  "
+                >
+                  Extra
+                </span>
+              </div>
+
+
+              {/* Addon Table */}
+              <div
+                className="
+                  mt-6
+                  overflow-x-auto
+                  rounded-2xl
+                  border
+                  border-gray-100
+                  bg-white
+                "
+              >
+
+                {/* Header */}
+                <div
+                  className="
+                    min-w-[500px]
+                    grid
+                    grid-cols-[2fr_1fr_auto]
+                    gap-4
+                    bg-gray-50
+                    px-5
+                    py-3
+                    text-sm
+                    font-semibold
+                    text-gray-500
+                  "
+                >
+                  <span>Ingredient</span>
+                  <span className="text-center">
+                    Quantity
+                  </span>
+                  <span className="text-right">
+                    Calories
+                  </span>
+                </div>
+
+                {/* Row */}
+                <div
+                  className="
+                    min-w-[500px]
+                    grid
+                    grid-cols-[2fr_1fr_auto]
+                    items-center
+                    gap-4
+                    px-5
+                    py-5
+                  "
+                >
+
+                  <p className="truncate font-semibold text-gray-900">
+                    {day[meal].addons.ingredient}
+                  </p>
+
+                  <span
+                    className="
+                      justify-self-center
+                      rounded-lg
+                      bg-blue-50
+                      px-3
+                      py-1
+                      text-sm
+                      font-semibold
+                      text-blue-700
+                    "
+                  >
+                    {day[meal].addons.quantity}
+                  </span>
+
+                  <span
+                    className="
+                      justify-self-end
+                      rounded-full
+                      bg-green-100
+                      px-3
+                      py-1
+                      text-sm
+                      font-bold
+                      text-green-700
+                    "
+                  >
+                    🔥 {day[meal].addons.cal} kcal
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </section>
     </div>
-  )}
-
-</section>
-
-  {/* Addons */}
-
-
+  </div>
 </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
 
 
 
