@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 // import { useGetUserID } from "../hooks/useGetUserID";
-import axios from "axios";
+
 // import { Link } from "react-router-dom";
 
 export const Home = () => {
