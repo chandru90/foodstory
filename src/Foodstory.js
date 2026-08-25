@@ -617,22 +617,58 @@ return (
 
 
     {/* Content */}
-    <div
+    {/* <div
       className="
         relative z-10
         max-w-6xl
         w-full
         bg-black/50
-        p-0
+        p-1
         md:p-6
-
+      
         rounded-lg
         flex flex-col
           h-dvh
          sm:h-[95vh]
 
       "
-    >
+    > */}
+
+
+
+
+
+
+
+
+
+<div
+  className="
+    relative z-10
+    max-w-6xl
+    w-full
+    bg-black/50
+    p-1 md:p-6
+    rounded-lg
+    flex flex-col
+    items-center
+    justify-evenly
+text-justify [text-justify:inter-word]
+    h-dvh
+    sm:h-[95vh]
+  "
+>
+
+
+
+
+
+
+
+
+
+
+
 
       {/* Header */}
       <div
@@ -641,6 +677,7 @@ return (
           lg:flex-row
           items-center
           justify-between
+          
           mb-4
           shrink-0
         "
@@ -701,21 +738,25 @@ speakText(translatedDescription, item.id);
   "
 >
  <p
-  style={{
-    fontFamily: "Merriweather",
-    // fontFamily: 'Poppins', 
-    fontSize: "1.5rem",
-    fontWeight: 800,
-    lineHeight: "2.2rem",
-    // color: "#BDB2FF",
-    //  color: "#F2EAD3",
-//  color: "#7FE9DE",
+//   style={{
+//     fontFamily: "Merriweather",
+//     // fontFamily: 'Poppins', 
+//     fontSize: "1.5rem",
 
- color: "#FBF6EE",
+//     sm:fontSize:16px,
+//     fontWeight: 800,
+//     lineHeight: "2.2rem",
+//     // color: "#BDB2FF",
+//     //  color: "#F2EAD3",
+// //  color: "#7FE9DE",
+
+//  color: "#FBF6EE",
  
     
     
-  }}
+//   }}
+
+className="food-title"
 >
  
 

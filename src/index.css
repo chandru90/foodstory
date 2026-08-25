@@ -342,3 +342,18 @@ color:beige;
     perspective: 1200px;
   }
 }
+
+.food-title {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 2.2rem;
+  color: #FBF6EE;
+}
+
+@media (max-width: 600px) {
+  .food-title {
+    font-size: 20px;
+    line-height: 1.5rem;
+  }
+}
