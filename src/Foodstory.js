@@ -244,7 +244,8 @@ console.log("moving to next section")
    {
   "id": "How Food Became an Important Part of Civilizations",
   "title": "civilization.title","description": "civilization.description",
-    "bgImages": [ "civiliz/img6.jpg","civiliz/img7.jpg","civiliz/img8.jpg","civiliz/img9.jpg","civiliz/img10.jpg"] 
+    "bgImages": [ "civiliz/img6.jpg","civiliz/img7.jpg","civiliz/img8.jpg","civiliz/img9.jpg","civiliz/img10.jpg"] ,
+    "mobbgImages":[ "civiliz/mobimg/img1.jpg","civiliz/mobimg/img2.jpg","civiliz/mobimg/img3.jpg","civiliz/mobimg/img4.jpg","civiliz/mobimg/img5.jpg"] 
 
 },
 
