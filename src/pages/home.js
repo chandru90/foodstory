@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, {  useState, useCallback } from "react";
 import { useGetUserID } from "../hooks/useGetUserID";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
