@@ -1459,7 +1459,7 @@ console.log("updated cachedata", cachedRecipes)
         console.log("Server Error:", err.response.data);
         setError(err.response.data.message || "Server Error");
       } else {
-        setError("Failed to generate recipes");
+        console.log("Failed to generate recipes");
       }
     } finally {
       setLoading(false);
