@@ -8,7 +8,7 @@ import { useIntl } from "react-intl";
 
 
 
-export const FoodStory = ({locale}) => {
+const FoodStory = ({locale}) => {
  const intl = useIntl();
 console.log("locale",locale)
   const containerRefs = useRef({});
@@ -152,8 +152,25 @@ console.log("moving to next section")
   setActiveSection((prev) => (prev + 1) % sections.length);
 };
   window.speechSynthesis.speak(speech);
+
+
+
+  
+
+
+
+
+
+
+
 };
-  const formatTime = (seconds) => {
+ 
+
+
+
+
+
+const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
@@ -216,7 +233,7 @@ console.log("moving to next section")
 // };
      const sections = [
 
-            { id: "intro", bgImages: [ "foodstories.png"] },
+            { id: "intro", bgImages: [ "foodstories.png"],mobbgImages: [ "foodstories.png"] },
 
 
            {id: "intro",title: "intro.title", description: "intro.description" , "bgImages": [ "intro1/img1.jpg","intro1/img2.jpg","intro1/img3.jpg","intro1/img4.jpg","intro1/img5.jpg"] ,"mobbgImages": [ "responsive/img2.jpg","intro1/img2.jpg","intro1/img3.jpg","intro1/img4.jpg","intro1/img5.jpg"]},
@@ -357,6 +374,7 @@ console.log("moving to next section")
 //   "emotion.title": "The Emotional Power of Cooking: How Food Becomes an Expression of Love", 
 //   "emotion.description": "Have you ever noticed how a simple home-cooked meal can feel more special than an expensive restaurant dish? The reason is not only the flavor—it is the emotion, effort, and care behind it. Cooking for someone is one of the most meaningful ways to express affection because every ingredient carries a little piece of the person who prepared it.\n\nFood has always been more than just nourishment. Across cultures and generations, cooking has been a way of showing love, creating comfort, and strengthening relationships. A parent preparing a child’s favorite meal, a friend baking a cake for a celebration, or someone making a warm bowl of soup for a loved one are all examples of how food can communicate feelings that words sometimes cannot express.\n\nWhen we cook for someone, we give more than a meal—we give our time, attention, and thoughtfulness. From choosing ingredients to understanding personal preferences and adding special touches, every step reflects care. A dish becomes meaningful because it is created with another person’s happiness in mind. The emotional value of a meal often comes not from its complexity or cost, but from the intention and love behind it.\n\nCooking also has the unique ability to provide emotional comfort. A familiar recipe can bring back memories of childhood, family gatherings, and special moments. The aroma of a favorite dish can create a feeling of home and belonging, even when we are far away. Food connects with our emotions because it is closely tied to memories, traditions, and personal experiences.\n\nPreparing food for someone is also a way of showing that we understand and appreciate them. Remembering someone’s favorite flavors, adjusting a recipe to suit their needs, or recreating a dish connected to their memories sends a powerful message: “You are important to me.” These small acts of attention often create stronger emotional bonds than grand gestures.\n\nShared meals have always been central to human connection. Families gather around the dining table to share stories, celebrations, and everyday moments. Friends reconnect over meals, couples create memories while cooking together, and communities come together through food traditions. The kitchen often becomes more than a place for preparation—it becomes a space where relationships grow.\n\nCooking also helps preserve history and identity. Family recipes, traditional dishes, and cultural cooking methods carry stories from one generation to the next. A grandmother’s recipe, a festival dish, or a special family spice blend represents more than ingredients—it represents memories, heritage, and the continuation of love across generations.\n\nThe emotional power of cooking extends beyond personal relationships. Sharing homemade food with neighbors, preparing meals for those in need, or offering food during difficult times are acts of kindness that provide comfort and connection. A simple meal can offer not only physical nourishment but also a sense of care, dignity, and belonging.\n\nWhat makes homemade food special are the invisible ingredients that cannot be measured—time, effort, patience, and love. Even the simplest dish can become unforgettable when it is prepared with genuine care.\n\nCooking for someone is ultimately an expression of love through action. Every meal prepared with kindness tells a story of connection and reminds us that food has the power to bring people closer together.\n\nWhen we cook for someone, we do not just prepare food—we create a moment of love, warmth, and connection."
 // },
+
 
 // {
 //   "id": "Cooking as Therapy: Finding Calm, Creativity, and Connection in the Kitchen",
@@ -684,7 +702,7 @@ text-justify [text-justify:inter-word]
         "
       >
 
-        <h2 className="text-2xl font-bold"
+        <h2 className="text-2xl font-bold mr-8"
          style={{
           color:"#7FE9DE"
          }

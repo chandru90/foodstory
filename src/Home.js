@@ -3579,11 +3579,11 @@ return (
             meal plans, our platform helps you make every meal both nutritious
             and enjoyable.
 
-          
+          <br/>
 
             ✔ Explore Healthy Recipes
-            <br />
-            ✔ Create & Share Your Own Dishes
+           
+            
             <br />
             ✔ Track Nutritional Information
             <br />

@@ -614,7 +614,7 @@ return (
             and enjoyable.
 
           
-
+<br />
             ✔ Explore Healthy Recipes
             <br />
             ✔ Create & Share Your Own Dishes

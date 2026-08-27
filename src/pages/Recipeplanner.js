@@ -1176,7 +1176,7 @@ const Recipeplanner = () => {
   const [loading, setLoading] = useState(false);
   const [recipes, setRecipes] = useState([]);
   const [error, setError] = useState("");
-
+const[showalert,setShowalert] =useState(false)
 // const [ongenerate,setOngenerate] =useState(false)
 
 // const [curdata,setCurdata]=useState("")
@@ -1255,7 +1255,10 @@ const [index, setIndex] = useState(0);
     return () => clearInterval(timer);
   });
 
+useEffect(()=>{
+setShowalert(true)
 
+},[])
 
 
   const videoRef = useRef();
@@ -1476,7 +1479,32 @@ return(
     padding: "20px"
   }}
 >
+{
+  showalert && (
+  <div>
+<div className="alert-overlay">
+          <div className="alert-box">
+            
+<p>
 
+  <p>
+  Nutritional information shown in the Recipe Planner contains approximate
+  calorie and nutrition values. Individual nutritional needs and calorie
+  intake vary from person to person. The planner is intended for general
+  nutritional awareness and guidance only. Please consult a qualified
+  dietitian or healthcare professional for personalized dietary advice.
+</p>
+</p>
+            <button onClick={() => setShowalert(false)}>
+              OK
+            </button>
+          </div>
+        </div>
+
+
+  </div>
+  )
+}
 
 <div className="relative min-h-screen overflow-hidden ">
 
@@ -1605,7 +1633,7 @@ return(
           <option value="kids">🧒 Kids</option>
           <option value="adult">🧑 Adults</option>
           <option value="elderly">👴 Elderly</option>
-          <option value="diabetic">🩺 Diabetic</option>
+         
           {/* <option value="budgetfriendly">💰 Budget Friendly</option> */}
         </select>
 
@@ -1909,7 +1937,7 @@ font-black
 
 
 
-<div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full px-4 sm:px-6 lg:px-0">
+<div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full px-4 sm:px-6 lg:px-0 mb-10">
 
   {/* ================= LEFT COLUMN ================= */}
   <div className="flex flex-col gap-8 lg:gap-10 w-full lg:w-[25%] lg:ml-6">
@@ -2047,6 +2075,7 @@ font-black
     <div
       className="
         relative
+        
         w-full
         h-auto
         lg:h-[700px]
@@ -2153,6 +2182,7 @@ font-black
       <div
         className="
           mt-6
+          mb-10
           lg:mt-0
           lg:absolute
           lg:inset-0
@@ -2458,179 +2488,181 @@ font-black
             overflow-x-auto
           "
         >
-          <p className="text-sm sm:text-base text-gray-700 leading-7 whitespace-pre-line break-words">
+          {/* <p className="text-sm sm:text-base text-gray-700 leading-7 whitespace-pre-line break-words">
             {JSON.stringify(
               day[meal]?.cooking_instructions,
               null,
               2
             )}
-          </p>
+          </p> */}
+
+
+
+           {day[meal]?.cooking_instructions
+      ?.replace(/^\/\/\s?/gm, "")}
         </div>
 
 
         {/* ================= ADDONS ================= */}
-        {day[meal]?.addons && (
-          <div className="mt-6 sm:mt-10">
+       {day[meal]?.addons && Object.keys(day[meal].addons).length > 0 && (
+  <div className="mt-6 sm:mt-10">
+    <div
+      className="
+        rounded-3xl
+        border
+        border-orange-100
+        bg-gradient-to-br
+        from-white
+        via-orange-50
+        to-amber-50
+        p-4
+        sm:p-6
+      "
+    >
+      {/* Addon Header */}
+      <div
+        className="
+          flex
+          flex-col
+          gap-4
+          sm:flex-row
+          sm:items-center
+          sm:justify-between
+        "
+      >
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div
+            className="
+              flex
+              h-12
+              w-12
+              items-center
+              justify-center
+              rounded-2xl
+              bg-orange-100
+              text-2xl
+              sm:h-14
+              sm:w-14
+            "
+          >
+            🥣
+          </div>
 
+          <div>
+            <h3 className="text-lg font-bold text-gray-900">
+              Add-ons
+            </h3>
+
+            <p className="text-xs text-gray-500 sm:text-sm">
+              Extra ingredients for this meal
+            </p>
+          </div>
+        </div>
+
+        <span
+          className="
+            w-fit
+            rounded-full
+            bg-orange-500
+            px-4
+            py-2
+            text-xs
+            font-semibold
+            uppercase
+            text-white
+          "
+        >
+          Extra
+        </span>
+      </div>
+
+      {/* Addon Table */}
+      <div
+        className="
+          mt-6
+          overflow-x-auto
+          rounded-2xl
+          border
+          border-gray-100
+          bg-white
+        "
+      >
+        {/* Table Header */}
+        <div
+          className="
+            min-w-[500px]
+            grid
+            grid-cols-[2fr_2fr]
+            gap-4
+            bg-gray-50
+            px-5
+            py-3
+            text-sm
+            font-semibold
+            text-gray-500
+          "
+        >
+          <span>Ingredient</span>
+          <span>Benefit</span>
+        </div>
+
+        {/* Addon Rows */}
+        {Object.entries(day[meal].addons).map(
+          ([ingredient, benefit]) => (
             <div
+              key={ingredient}
               className="
-                rounded-3xl
-                border
-                border-orange-100
-                bg-gradient-to-br
-                from-white
-                via-orange-50
-                to-amber-50
-                p-4
-                sm:p-6
+                min-w-[500px]
+                grid
+                grid-cols-[2fr_2fr]
+                items-center
+                gap-4
+                border-t
+                border-gray-100
+                px-5
+                py-5
               "
             >
-
-              {/* Addon Header */}
-              <div
-                className="
-                  flex
-                  flex-col
-                  gap-4
-                  sm:flex-row
-                  sm:items-center
-                  sm:justify-between
-                "
-              >
-
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div
-                    className="
-                      flex
-                      h-12 w-12
-                      sm:h-14 sm:w-14
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      bg-orange-100
-                      text-2xl
-                    "
-                  >
-                    🥣
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900">
-                      Add-ons
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-gray-500">
-                      Extra ingredients for this meal
-                    </p>
-                  </div>
-                </div>
-
-                <span
-                  className="
-                    w-fit
-                    rounded-full
-                    bg-orange-500
-                    px-4
-                    py-2
-                    text-xs
-                    font-semibold
-                    uppercase
-                    text-white
-                  "
-                >
-                  Extra
-                </span>
-              </div>
-
-
-              {/* Addon Table */}
-              <div
-                className="
-                  mt-6
-                  overflow-x-auto
-                  rounded-2xl
-                  border
-                  border-gray-100
-                  bg-white
-                "
-              >
-
-                {/* Header */}
+              {/* Ingredient */}
+              <div className="flex items-center gap-3">
                 <div
                   className="
-                    min-w-[500px]
-                    grid
-                    grid-cols-[2fr_1fr_auto]
-                    gap-4
-                    bg-gray-50
-                    px-5
-                    py-3
-                    text-sm
-                    font-semibold
-                    text-gray-500
-                  "
-                >
-                  <span>Ingredient</span>
-                  <span className="text-center">
-                    Quantity
-                  </span>
-                  <span className="text-right">
-                    Calories
-                  </span>
-                </div>
-
-                {/* Row */}
-                <div
-                  className="
-                    min-w-[500px]
-                    grid
-                    grid-cols-[2fr_1fr_auto]
+                    flex
+                    h-10
+                    w-10
+                    shrink-0
                     items-center
-                    gap-4
-                    px-5
-                    py-5
+                    justify-center
+                    rounded-xl
+                    bg-orange-100
+                    text-lg
                   "
                 >
-
-                  <p className="truncate font-semibold text-gray-900">
-                    {day[meal].addons.ingredient}
-                  </p>
-
-                  <span
-                    className="
-                      justify-self-center
-                      rounded-lg
-                      bg-blue-50
-                      px-3
-                      py-1
-                      text-sm
-                      font-semibold
-                      text-blue-700
-                    "
-                  >
-                    {day[meal].addons.quantity}
-                  </span>
-
-                  <span
-                    className="
-                      justify-self-end
-                      rounded-full
-                      bg-green-100
-                      px-3
-                      py-1
-                      text-sm
-                      font-bold
-                      text-green-700
-                    "
-                  >
-                    🔥 {day[meal].addons.cal} kcal
-                  </span>
-
+                  🥑
                 </div>
+
+                <p className="font-semibold text-gray-900">
+                  {ingredient}
+                </p>
               </div>
+
+              {/* Benefit */}
+              <p
+                className="
+                  text-sm
+                  leading-6
+                  text-gray-600
+                "
+              >
+                {benefit}
+              </p>
             </div>
-          </div>
+          )
         )}
+      </div>
+    </div>
+  </div>
+)}
 
       </section>
     </div>
@@ -2677,7 +2709,7 @@ font-black
 
 
 </div>
-<div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+<div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 mt-20">
   <h2 className="text-2xl font-bold text-gray-800 mb-6">
     Nutrition Summary
   </h2>
@@ -2693,35 +2725,35 @@ font-black
     <div className="bg-blue-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Daily Value</p>
       <h3 className="text-2xl font-bold text-blue-600">
-        {day?.summary?.dv ?? 0}%
+        {day?.summary?.dv ?? 0}
       </h3>
     </div>
 
     <div className="bg-green-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Protein</p>
       <h3 className="text-2xl font-bold text-green-600">
-        {day?.summary?.Protiens_dv ?? 0}%
+        {day?.summary?.Protiens_dv ?? 0}
       </h3>
     </div>
 
     <div className="bg-yellow-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Carbs</p>
       <h3 className="text-2xl font-bold text-yellow-600">
-        {day?.summary?.carbs_dv ?? 0}%
+        {day?.summary?.carbs_dv ?? 0}
       </h3>
     </div>
 
     <div className="bg-red-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Fats</p>
       <h3 className="text-2xl font-bold text-red-600">
-        {day?.summary?.fats_dv ?? 0}%
+        {day?.summary?.fats_dv ?? 0}
       </h3>
     </div>
 
     <div className="bg-purple-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Fiber</p>
       <h3 className="text-2xl font-bold text-purple-600">
-        {day?.summary?.fiber_dv ?? 0}%
+        {day?.summary?.fiber_dv ?? 0}
       </h3>
     </div>
   </div>
