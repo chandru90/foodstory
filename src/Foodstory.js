@@ -800,7 +800,7 @@ className="food-title"
     absolute left-3 sm:left-5
     top-1/2 -translate-y-1/2
     z-50
-    w-11 h-11 sm:w-12 sm:h-12
+    w-11 h-11 sm:w-20 sm:h-20
     flex items-center justify-center
     rounded-full
     bg-black/70
@@ -835,10 +835,10 @@ className="food-title"
     absolute right-3 sm:right-5
     top-1/2 -translate-y-1/2
     z-50
-    w-11 h-11 sm:w-12 sm:h-12
+    w-15 h-15 sm:w-20 sm:h-20
     flex items-center justify-center
     rounded-full
-    bg-black/70
+    bg-black
     text-white
     shadow-lg
     backdrop-blur-sm
@@ -852,7 +852,7 @@ className="food-title"
   aria-label="Next section"
 >
   <span className="text-2xl font-light transition-transform duration-200 active:translate-x-1">
-    ›
+    ›  Play
   </span>
 </button>
 
