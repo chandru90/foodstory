@@ -325,7 +325,7 @@ const Nutriread =()=>{
         );
 
         const data = response.data.posts;
-
+console.log("responsed data", response.data.posts)
         // Save to localStorage
         localStorage.setItem(
           "linkedinposts",
@@ -349,258 +349,458 @@ const Nutriread =()=>{
   }, []);
 
   return (
-   <div
+<div
   style={{
     minHeight: "100vh",
-    background: "#f5f7fb",
-    padding: "40px 20px",
+    background:
+      "linear-gradient(180deg, #f8fafc 0%, #f1f5f9 45%, #ffffff 100%)",
+    padding: "56px 20px 80px",
   }}
 >
   <div
     style={{
-      maxWidth: "1200px",
+      maxWidth: "1280px",
       margin: "0 auto",
     }}
   >
     {/* Header */}
-    <div style={{ marginBottom: "28px" }}>
-      <h1
-        style={{
-          margin: 0,
-          fontSize: "30px",
-          fontWeight: 800,
-          color: "#111827",
-          letterSpacing: "-0.5px",
-        }}
-      >
-        Latest Posts
-      </h1>
+    <div
+      style={{
+        marginBottom: "38px",
+        display: "flex",
+        alignItems: "flex-end",
+        justifyContent: "space-between",
+        gap: "20px",
+        flexWrap: "wrap",
+      }}
+    >
+      <div>
+        {/* Small label */}
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "7px",
+            marginBottom: "12px",
+            padding: "7px 12px",
+            borderRadius: "999px",
+            background: "linear-gradient(135deg, #eef2ff, #f5f3ff)",
+            border: "1px solid #e0e7ff",
+            color: "#4f46e5",
+            fontSize: "11px",
+            fontWeight: 800,
+            letterSpacing: "0.8px",
+            textTransform: "uppercase",
+          }}
+        >
+          <span>✦</span>
+          Food Stories
+        </div>
 
-      <p
-        style={{
-          margin: "8px 0 0",
-          color: "#6b7280",
-          fontSize: "15px",
-        }}
-      >
-        Explore the latest updates and insights
-      </p>
+        <h1
+          style={{
+            margin: 0,
+            fontSize: "clamp(30px, 5vw, 44px)",
+            fontWeight: 900,
+            lineHeight: 1.1,
+            letterSpacing: "-1.5px",
+            color: "#0f172a",
+          }}
+        >
+          Latest Posts
+        </h1>
+
+        <p
+          style={{
+            margin: "12px 0 0",
+            maxWidth: "600px",
+            color: "#64748b",
+            fontSize: "15px",
+            lineHeight: 1.7,
+          }}
+        >
+          Discover the latest food stories, nutrition insights, ideas,
+          and inspiration from our community.
+        </p>
+      </div>
+
+      {/* Post count */}
+      {posts.length > 0 && (
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "10px 15px",
+            borderRadius: "12px",
+            background: "#ffffff",
+            border: "1px solid #e2e8f0",
+            boxShadow: "0 4px 14px rgba(15, 23, 42, 0.05)",
+            color: "#475569",
+            fontSize: "13px",
+            fontWeight: 700,
+          }}
+        >
+          <span
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              background: "#22c55e",
+              boxShadow: "0 0 0 4px #dcfce7",
+            }}
+          />
+          {posts.length} {posts.length === 1 ? "post" : "posts"}
+        </div>
+      )}
     </div>
 
     {/* Posts */}
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-        gap: "24px",
-      }}
-    >
-      {posts.map((post, index) => (
-        <article
-          key={post.url || index}
-          style={{
-            background: "#ffffff",
-            borderRadius: "18px",
-            overflow: "hidden",
-            border: "1px solid #e5e7eb",
-            boxShadow: "0 4px 16px rgba(15, 23, 42, 0.06)",
-            transition:
-              "transform 0.25s ease, box-shadow 0.25s ease",
-            display: "flex",
-            flexDirection: "column",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-6px)";
-            e.currentTarget.style.boxShadow =
-              "0 16px 35px rgba(15, 23, 42, 0.12)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow =
-              "0 4px 16px rgba(15, 23, 42, 0.06)";
-          }}
-        >
-          {/* Image */}
-          {post.imageUrl ? (
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "210px",
-                overflow: "hidden",
-                background: "#eef2f7",
-              }}
-            >
-              <img
-                src={post.imageUrl}
-                alt={post.category || "LinkedIn post"}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                  transition: "transform 0.4s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.04)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
-              />
-
-              {/* Image overlay */}
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background:
-                    "linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.35))",
-                  pointerEvents: "none",
-                }}
-              />
-            </div>
-          ) : (
-            <div
-              style={{
-                height: "8px",
-                background:
-                  "linear-gradient(90deg, #4f46e5, #7c3aed)",
-              }}
-            />
-          )}
-
-          {/* Content */}
-          <div
+    {posts.length > 0 && (
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns:
+            "repeat(auto-fill, minmax(min(100%, 330px), 1fr))",
+          gap: "28px",
+        }}
+      >
+        {posts.map((post, index) => (
+          <article
+            key={post.url || index}
             style={{
-              padding: "22px",
+              position: "relative",
+              background: "#ffffff",
+              borderRadius: "22px",
+              overflow: "hidden",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              boxShadow: "0 8px 30px rgba(15, 23, 42, 0.06)",
+              transition:
+                "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
               display: "flex",
               flexDirection: "column",
-              flex: 1,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.boxShadow =
+                "0 22px 45px rgba(15, 23, 42, 0.13)";
+              e.currentTarget.style.borderColor = "#c7d2fe";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 30px rgba(15, 23, 42, 0.06)";
+              e.currentTarget.style.borderColor =
+                "rgba(226, 232, 240, 0.9)";
             }}
           >
-            {/* Category */}
+            {/* Top accent */}
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: "14px",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: "4px",
+                background:
+                  "linear-gradient(90deg, #4f46e5, #8b5cf6, #ec4899)",
+                zIndex: 2,
               }}
-            >
-              <span
+            />
+
+            {/* Image */}
+            {post.imageUrl ? (
+              <div
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  padding: "6px 11px",
-                  borderRadius: "999px",
-                  background: "#eef2ff",
-                  color: "#4f46e5",
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.4px",
+                  position: "relative",
+                  width: "100%",
+                  height: "230px",
+                  overflow: "hidden",
+                  background:
+                    "linear-gradient(135deg, #e2e8f0, #f8fafc)",
                 }}
               >
-                {post.category || "Post"}
-              </span>
-
-              <span
-                style={{
-                  color: "#9ca3af",
-                  fontSize: "18px",
-                }}
-              >
-                •••
-              </span>
-            </div>
-
-            {/* Description */}
-            <p
-              style={{
-                margin: 0,
-                color: "#1f2937",
-                fontSize: "15px",
-                lineHeight: 1.7,
-                display: "-webkit-box",
-                WebkitLineClamp: 5,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-              }}
-            >
-              {post.description}
-            </p>
-
-            {/* Bottom action */}
-            <div
-              style={{
-                marginTop: "auto",
-                paddingTop: "20px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                borderTop: "1px solid #f1f5f9",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "12px",
-                  color: "#9ca3af",
-                }}
-              >
-                LinkedIn Post
-              </span>
-
-              {post.url && (
-                <a
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <img
+                  src={post.imageUrl}
+                  alt={post.category || "Food story"}
+                  loading="lazy"
                   style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    padding: "9px 14px",
-                    borderRadius: "9px",
-                    background: "#4f46e5",
-                    color: "#ffffff",
-                    fontSize: "13px",
-                    fontWeight: 600,
-                    textDecoration: "none",
-                    transition: "background 0.2s ease",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                    transition: "transform 0.5s ease",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#4338ca";
+                    e.currentTarget.style.transform = "scale(1.07)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "#4f46e5";
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                />
+
+                {/* Image gradient */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, rgba(15,23,42,0.02) 30%, rgba(15,23,42,0.65) 100%)",
+                    pointerEvents: "none",
+                  }}
+                />
+
+                {/* Category on image */}
+                <span
+                  style={{
+                    position: "absolute",
+                    left: "16px",
+                    bottom: "16px",
+                    padding: "7px 11px",
+                    borderRadius: "999px",
+                    background: "rgba(255,255,255,0.92)",
+                    backdropFilter: "blur(8px)",
+                    color: "#3730a3",
+                    fontSize: "10px",
+                    fontWeight: 800,
+                    letterSpacing: "0.5px",
+                    textTransform: "uppercase",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
                   }}
                 >
-                  View post
-                  <span style={{ fontSize: "15px" }}>↗</span>
-                </a>
+                  {post.category || "Food"}
+                </span>
+
+                {/* Number */}
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "16px",
+                    right: "16px",
+                    width: "34px",
+                    height: "34px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "50%",
+                    background: "rgba(15,23,42,0.55)",
+                    backdropFilter: "blur(8px)",
+                    color: "#ffffff",
+                    fontSize: "12px",
+                    fontWeight: 800,
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+            ) : (
+              <div
+                style={{
+                  height: "110px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background:
+                    "linear-gradient(135deg, #eef2ff, #f5f3ff 50%, #fdf2f8)",
+                  color: "#6366f1",
+                  fontSize: "32px",
+                }}
+              >
+                🍽️
+              </div>
+            )}
+
+            {/* Content */}
+            <div
+              style={{
+                padding: "22px",
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+              }}
+            >
+              {/* Category for cards without image */}
+              {!post.imageUrl && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginBottom: "14px",
+                  }}
+                >
+                  <span
+                    style={{
+                      display: "inline-flex",
+                      padding: "6px 11px",
+                      borderRadius: "999px",
+                      background: "#eef2ff",
+                      color: "#4f46e5",
+                      fontSize: "10px",
+                      fontWeight: 800,
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {post.category || "Food"}
+                  </span>
+
+                  <span
+                    style={{
+                      color: "#cbd5e1",
+                      fontSize: "16px",
+                      letterSpacing: "2px",
+                    }}
+                  >
+                    •••
+                  </span>
+                </div>
               )}
+
+              {/* Description */}
+              <p
+                style={{
+                  margin: 0,
+                  color: "#1e293b",
+                  fontSize: "15px",
+                  lineHeight: 1.75,
+                  fontWeight: 500,
+                  display: "-webkit-box",
+                  WebkitLineClamp: 5,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                }}
+              >
+                {post.description}
+              </p>
+
+              {/* Bottom action */}
+              <div
+                style={{
+                  marginTop: "auto",
+                  paddingTop: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "12px",
+                  borderTop: "1px solid #f1f5f9",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "7px",
+                    color: "#94a3b8",
+                    fontSize: "12px",
+                    fontWeight: 600,
+                  }}
+                >
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "26px",
+                      height: "26px",
+                      borderRadius: "8px",
+                      background: "#f1f5f9",
+                      fontSize: "13px",
+                    }}
+                  >
+                    in
+                  </span>
+                  LinkedIn
+                </div>
+
+                {post.url && (
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${post.category || "post"} on LinkedIn`}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "7px",
+                      padding: "10px 15px",
+                      borderRadius: "11px",
+                      background:
+                        "linear-gradient(135deg, #4f46e5, #6366f1)",
+                      color: "#ffffff",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      textDecoration: "none",
+                      boxShadow: "0 5px 14px rgba(79,70,229,0.22)",
+                      transition:
+                        "transform 0.2s ease, box-shadow 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform =
+                        "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 8px 20px rgba(79,70,229,0.3)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 5px 14px rgba(79,70,229,0.22)";
+                    }}
+                  >
+                    View post
+                    <span style={{ fontSize: "15px" }}>↗</span>
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        </article>
-      ))}
-    </div>
+          </article>
+        ))}
+      </div>
+    )}
 
     {/* Empty state */}
     {posts.length === 0 && (
       <div
         style={{
-          padding: "70px 20px",
+          position: "relative",
+          overflow: "hidden",
+          padding: "80px 25px",
           textAlign: "center",
           background: "#ffffff",
-          borderRadius: "18px",
-          border: "1px solid #e5e7eb",
+          borderRadius: "24px",
+          border: "1px solid #e2e8f0",
+          boxShadow: "0 12px 35px rgba(15, 23, 42, 0.06)",
         }}
       >
+        {/* Decorative background */}
         <div
           style={{
-            fontSize: "42px",
-            marginBottom: "12px",
+            position: "absolute",
+            width: "180px",
+            height: "180px",
+            borderRadius: "50%",
+            background: "#eef2ff",
+            filter: "blur(5px)",
+            top: "-90px",
+            left: "-60px",
+            opacity: 0.8,
+          }}
+        />
+
+        <div
+          style={{
+            position: "relative",
+            width: "72px",
+            height: "72px",
+            margin: "0 auto 20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: "22px",
+            background:
+              "linear-gradient(135deg, #eef2ff, #f5f3ff)",
+            fontSize: "34px",
+            boxShadow: "0 10px 25px rgba(79,70,229,0.1)",
           }}
         >
           📭
@@ -608,9 +808,11 @@ const Nutriread =()=>{
 
         <h3
           style={{
-            margin: "0 0 6px",
-            color: "#111827",
-            fontSize: "18px",
+            position: "relative",
+            margin: "0 0 8px",
+            color: "#0f172a",
+            fontSize: "21px",
+            fontWeight: 800,
           }}
         >
           No posts yet
@@ -618,12 +820,16 @@ const Nutriread =()=>{
 
         <p
           style={{
-            margin: 0,
-            color: "#6b7280",
+            position: "relative",
+            maxWidth: "420px",
+            margin: "0 auto",
+            color: "#64748b",
             fontSize: "14px",
+            lineHeight: 1.7,
           }}
         >
-          New posts will appear here.
+          New food stories and insights will appear here as soon as
+          they're published.
         </p>
       </div>
     )}

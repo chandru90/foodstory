@@ -1166,7 +1166,28 @@ import React, { useState } from "react";
 import axios from "axios";
 import {useRef} from "react";
 import { useEffect } from "react";
+
+
+import LinearProgress from "@mui/material/LinearProgress";
+
 // import Grow from "@mui/material/Grow";
+
+
+
+const nutritionQuotes = [
+  "🥦 Eat a variety of colorful vegetables every day.",
+  "🍎 An apple a day can help support overall health.",
+  "💧 Stay hydrated—water is essential for every cell in your body.",
+  "🥜 Nuts are packed with healthy fats, protein, and fiber.",
+  "🥕 Carrots are rich in beta-carotene, which supports eye health.",
+  "🍌 Bananas are a great source of potassium.",
+  "🥬 Leafy greens are loaded with vitamins and minerals.",
+  "🍊 Citrus fruits are rich in Vitamin C.",
+  "🌾 Choose whole grains over refined grains for more fiber.",
+  "🐟 Fish is an excellent source of omega-3 fatty acids.",
+];
+
+
 
 
 const Recipeplanner = () => {
@@ -1342,18 +1363,7 @@ setShowalert(true)
 //   };
 
 
-const nutritionQuotes = [
-  "🥦 Eat a variety of colorful vegetables every day.",
-  "🍎 An apple a day can help support overall health.",
-  "💧 Stay hydrated—water is essential for every cell in your body.",
-  "🥜 Nuts are packed with healthy fats, protein, and fiber.",
-  "🥕 Carrots are rich in beta-carotene, which supports eye health.",
-  "🍌 Bananas are a great source of potassium.",
-  "🥬 Leafy greens are loaded with vitamins and minerals.",
-  "🍊 Citrus fruits are rich in Vitamin C.",
-  "🌾 Choose whole grains over refined grains for more fiber.",
-  "🐟 Fish is an excellent source of omega-3 fatty acids.",
-];
+
 
 const [currentQuote, setCurrentQuote] = useState(nutritionQuotes[0]);
 
@@ -1374,7 +1384,7 @@ const [currentQuote, setCurrentQuote] = useState(nutritionQuotes[0]);
     }, 5000);
 
     return () => clearInterval(interval);
-  });
+  },[]);
 
 
  const handlerecipegenerate = async () => {
@@ -1459,7 +1469,7 @@ console.log("updated cachedata", cachedRecipes)
         console.log("Server Error:", err.response.data);
         setError(err.response.data.message || "Server Error");
       } else {
-        console.log("Failed to generate recipes");
+        console("Failed to generate recipes");
       }
     } finally {
       setLoading(false);
@@ -1567,7 +1577,7 @@ return(
 {
   loading ? (
 
-    
+    <div>
      <div className="bg-white rounded-xl shadow-lg p-6 text-center max-w-md mx-auto">
       <h1 className="text-3xl font-bold text-green-600 mb-4">
         🥗 NutriFacts
@@ -1576,6 +1586,9 @@ return(
       <p className="text-gray-700 text-lg transition-all duration-500">
         {currentQuote}
       </p>
+    </div>
+   {/* <LinearProgress aria-label="Loading…" /> */}
+     <LinearProgress aria-label="Loading…" />
     </div>
   ) : (
     <>
