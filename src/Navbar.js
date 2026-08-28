@@ -60,6 +60,17 @@ return (
               Nutri Reads
             </Link>
 
+
+<Link
+              to="/aboutus"
+              className="md:text-lg text-xl text-gray-300 hover:text-white transition duration-200"
+            >
+              About us
+            </Link>
+
+
+
+
             {/* <Link
               to="/Nutripedia"
               className="md:text-lg text-4xl text-gray-300 hover:text-white transition duration-200"

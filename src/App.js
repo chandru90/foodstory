@@ -17,6 +17,7 @@ import ta from "./i18n/locales/ta/translaton.json";
 import hi from "./i18n/locales/hi/translaton.json";
 import fr from "./i18n/locales/fr/translaton.json";
 import es from "./i18n/locales/es/translaton.json";
+import Aboutus from "./pages/Aboutus.js";
 const messages = { en, fr, ar, hi, ta,es };
 
 
@@ -90,7 +91,10 @@ export default function App() {
             </IntlProvider>
           }
         />
-
+<Route
+          path="/aboutus"
+          element={<Aboutus />}
+        />
         <Route
           path="/nutrireads"
           element={<Nutrireads />}
