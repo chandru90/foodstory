@@ -495,7 +495,7 @@ return (
 
   return (
     <div className="relative rounded-2xl sm:p-0 p-6 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden mt-4  md:mt-10 ml-0 md:ml-10 mb-5 md:mb-20">
-{/* 
+
       <div
   key={item.id}
   id={item.id}
@@ -537,9 +537,27 @@ return (
     })`,
     backgroundPosition: "center center",
   }}
-> */}
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
 <div
-  key={item.id}
+  key={item.id} 
   id={item.id}
   className="
     relative
@@ -567,12 +585,12 @@ return (
     duration-700
     ease-in-out
   "
->
+> */}
   {/* =========================
       MOBILE BACKGROUND
       < 640px
   ========================== */}
-  <div
+  {/* <div
     className="
       absolute
       inset-0
@@ -595,13 +613,13 @@ return (
       })`,
       backgroundPosition: "center center",
     }}
-  />
+  /> */}
 
   {/* =========================
       DESKTOP BACKGROUND
       >= 640px
   ========================== */}
-  <div
+  {/* <div
     className="
       absolute
       inset-0
@@ -625,7 +643,7 @@ return (
       })`,
       backgroundPosition: "center center",
     }}
-  />
+  /> */}
 
 
 

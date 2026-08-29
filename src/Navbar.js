@@ -256,3 +256,195 @@ return (
 
 
 };
+
+
+
+// import React, { useState } from "react";
+// import { Link, useLocation } from "react-router-dom";
+
+// export const Navbar = () => {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const location = useLocation();
+
+//   const onlineLinks = [
+//     { name: "Home", path: "/" },
+//     { name: "Food Story", path: "/foodstory" },
+//     { name: "Generate Recipes", path: "/generaterecipe" },
+//     { name: "Nutri Reads", path: "/Nutrireads" },
+//     { name: "About Us", path: "/aboutus" },
+//   ];
+
+//   const offlineLinks = [
+//     { name: "Generate Recipes", path: "/generaterecip" },
+//     { name: "Food Story", path: "/foodstory" },
+//     { name: "Nutri Read", path: "/nutrirea" },
+//   ];
+
+//   const activeLink = (path) => location.pathname === path;
+//   function isNetworkAvailable() {
+//   return navigator.onLine;
+// }
+//   return (
+//     <>
+//       {isNetworkAvailable() ? (
+//         <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-gray-950/90 text-white shadow-xl backdrop-blur-xl">
+//           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+//             <div className="flex h-20 items-center justify-between">
+
+//               {/* Logo */}
+//               <Link
+//                 to="/"
+//                 onClick={() => setIsMenuOpen(false)}
+//                 className="group flex items-center gap-2"
+//               >
+//                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 via-green-500 to-pink-500 text-xl shadow-lg transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
+//                   🍴
+//                 </div>
+
+//                 <span className="text-xl font-extrabold tracking-tight sm:text-2xl md:text-3xl">
+//                   <span className="bg-gradient-to-r from-blue-400 via-green-400 to-pink-500 bg-clip-text text-transparent">
+//                     Food
+//                   </span>{" "}
+//                   <span className="text-white">Stories</span>
+//                 </span>
+//               </Link>
+
+//               {/* Desktop Navigation */}
+//               <div className="hidden items-center gap-1 md:flex">
+//                 {onlineLinks.map((link) => (
+//                   <Link
+//                     key={link.path}
+//                     to={link.path}
+//                     className={`relative rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300 lg:text-base ${
+//                       activeLink(link.path)
+//                         ? "bg-white/10 text-white shadow-inner"
+//                         : "text-gray-400 hover:bg-white/5 hover:text-white"
+//                     }`}
+//                   >
+//                     {link.name}
+
+//                     {activeLink(link.path) && (
+//                       <span className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-400 to-pink-500" />
+//                     )}
+//                   </Link>
+//                 ))}
+//               </div>
+
+//               {/* Mobile Menu Button */}
+//               <button
+//                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+//                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gray-200 transition hover:bg-white/10 md:hidden"
+//                 aria-label="Toggle navigation menu"
+//               >
+//                 {isMenuOpen ? (
+//                   <svg
+//                     className="h-6 w-6"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     viewBox="0 0 24 24"
+//                   >
+//                     <path
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                       strokeWidth="2"
+//                       d="M6 18L18 6M6 6l12 12"
+//                     />
+//                   </svg>
+//                 ) : (
+//                   <svg
+//                     className="h-6 w-6"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     viewBox="0 0 24 24"
+//                   >
+//                     <path
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                       strokeWidth="2"
+//                       d="M4 6h16M4 12h16M4 18h16"
+//                     />
+//                   </svg>
+//                 )}
+//               </button>
+//             </div>
+
+//             {/* Mobile Navigation */}
+//             {isMenuOpen && (
+//               <div className="border-t border-white/10 py-4 md:hidden">
+//                 <div className="flex flex-col gap-2">
+//                   {onlineLinks.map((link) => (
+//                     <Link
+//                       key={link.path}
+//                       to={link.path}
+//                       onClick={() => setIsMenuOpen(false)}
+//                       className={`rounded-xl px-4 py-3 text-base font-medium transition-all ${
+//                         activeLink(link.path)
+//                           ? "bg-gradient-to-r from-blue-500/20 to-green-500/20 text-white"
+//                           : "text-gray-400 hover:bg-white/5 hover:text-white"
+//                       }`}
+//                     >
+//                       <div className="flex items-center justify-between">
+//                         <span>{link.name}</span>
+
+//                         {activeLink(link.path) && (
+//                           <span className="text-green-400">●</span>
+//                         )}
+//                       </div>
+//                     </Link>
+//                   ))}
+//                 </div>
+//               </div>
+//             )}
+//           </div>
+//         </nav>
+//       ) : (
+//         /* Offline Navigation */
+//         <nav className="sticky top-0 z-50 border-b border-orange-500/20 bg-gray-950/95 text-white shadow-xl backdrop-blur-xl">
+//           <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+            
+//             {/* Offline Header */}
+//             <div className="mb-4 flex items-center justify-between">
+//               <Link
+//                 to="/"
+//                 className="text-xl font-extrabold sm:text-2xl"
+//               >
+//                 <span className="bg-gradient-to-r from-blue-400 via-green-400 to-pink-500 bg-clip-text text-transparent">
+//                   Food Stories
+//                 </span>
+//               </Link>
+
+//               <div className="flex items-center gap-2 rounded-full border border-orange-400/20 bg-orange-400/10 px-3 py-1.5">
+//                 <span className="h-2 w-2 animate-pulse rounded-full bg-orange-400" />
+//                 <span className="text-xs font-medium text-orange-300">
+//                   Offline
+//                 </span>
+//               </div>
+//             </div>
+
+//             {/* Offline Links */}
+//             <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+//               {offlineLinks.map((link) => (
+//                 <Link
+//                   key={link.path}
+//                   to={link.path}
+//                   className={`group rounded-xl border px-4 py-3 text-center text-sm font-medium transition-all duration-300 ${
+//                     activeLink(link.path)
+//                       ? "border-green-400/30 bg-green-400/10 text-green-300"
+//                       : "border-white/10 bg-white/5 text-gray-300 hover:border-white/20 hover:bg-white/10 hover:text-white"
+//                   }`}
+//                 >
+//                   <span className="transition-transform duration-300 group-hover:scale-105">
+//                     {link.name}
+//                   </span>
+//                 </Link>
+//               ))}
+//             </div>
+//           </div>
+//         </nav>
+//       )}
+//     </>
+//   );
+// };
+
+// // export default Navbar;
+
