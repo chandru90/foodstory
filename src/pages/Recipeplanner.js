@@ -1807,7 +1807,7 @@ Healthy Plan
 
 {
 (
-["breakfast","lunch","dinner",]
+["breakfast","lunch","dinner","healthy_snack"]
 
 ).map(meal=>(
 
@@ -2676,7 +2676,49 @@ font-black
     </div>
   </div>
 )}
+<div className="group relative overflow-hidden rounded-2xl border border-emerald-100 bg-gradient-to-br from-white via-emerald-50/60 to-lime-50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
 
+  {/* Decorative background */}
+  <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-emerald-200/30 blur-2xl" />
+  <div className="absolute -bottom-10 -left-10 h-24 w-24 rounded-full bg-lime-200/30 blur-2xl" />
+
+  <div className="relative z-10">
+
+    {/* Header */}
+    <div className="mb-4 flex items-center gap-3">
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-2xl shadow-sm">
+        🥗
+      </div>
+
+      <div>
+        <h1 className="text-xl font-bold tracking-tight text-emerald-800 sm:text-2xl">
+          NutriKnow
+        </h1>
+        <p className="text-xs font-medium uppercase tracking-wider text-emerald-600">
+          Nutrition Insight
+        </p>
+      </div>
+    </div>
+
+    {/* Content */}
+    <div className="rounded-xl border border-emerald-100 bg-white/80 p-4 backdrop-blur-sm sm:p-5">
+      <p className="text-sm leading-7 text-gray-700 sm:text-base">
+        {day?.[meal]?.Nutriknow || "n/a"}
+      </p>
+    </div>
+
+    {/* Footer */}
+    <div className="mt-4 flex items-center gap-2 text-xs text-emerald-700">
+      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100">
+        💡
+      </span>
+      <span className="font-medium">
+        A simple insight into the nutritional value of your meal
+      </span>
+    </div>
+
+  </div>
+</div>
       </section>
     </div>
   </div>
