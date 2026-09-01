@@ -67,7 +67,12 @@ return (
             >
               About us
             </Link>
-
+{/* <Link
+              to="/recipeplan"
+              className="md:text-lg text-xl text-gray-300 hover:text-white transition duration-200"
+            >
+              Recipes
+            </Link> */}
 
 
 

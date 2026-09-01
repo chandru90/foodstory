@@ -21,10 +21,21 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+
+  "reactSnap": {
+  "source": "build",
+  "include": [
+    "/",
+    "/foodstory",
+    "/aboutus",
+    "/nutrireads",
+    "/recipeplan" 
+  ]
+},
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -44,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "react-snap": "^1.23.0",
     "tailwindcss": "^3.4.19"
   }
 }

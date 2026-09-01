@@ -160,7 +160,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useEffect,useState } from "react";
 export const Home = () => {
   const storyFeatures = [
     {
@@ -240,6 +240,351 @@ export const Home = () => {
       color: "bg-cyan-100 text-cyan-600",
     },
   ];
+
+
+
+
+const cuisines = [
+  {
+    id: 1,
+    country: "Mediterranean",
+    flag: "🫒",
+    number: "01",
+    title: "Simple Food, Rich Tradition",
+
+    description:
+      "Mediterranean cuisine represents a collection of food traditions from countries surrounding the Mediterranean Sea. Its traditional pattern emphasizes vegetables, fruits, legumes, whole grains, nuts, seeds, olive oil and seafood. This combination provides fiber, plant compounds, vitamins, minerals and predominantly unsaturated fats.Rich in monounsaturated fats from olive oil and omega-3 fatty acids from fish, which support lower cardiovascular risks.Research suggests that Mediterranean-style eating can improve several cardiovascular risk factors, including blood lipids and blood pressure, while the high intake of plant foods and fiber may also support healthy blood-glucose regulation. The pattern has also been associated with a lower risk of type 2 diabetes, metabolic syndrome and obesity.",
+
+    story:
+      "Meals are often built around fresh seasonal ingredients, herbs and simple cooking techniques. Food is also strongly connected with family meals, hospitality and social life.",
+
+    healthImpact:
+      "The Mediterranean dietary pattern has been extensively studied for cardiovascular health. Research suggests that diets rich in vegetables, legumes, whole grains, nuts, seafood and unsaturated fats may help support healthier blood lipids, blood pressure and glucose regulation. These characteristics are associated with a lower risk of cardiovascular disease and type 2 diabetes when the overall dietary pattern is maintained over time.",
+
+    nutritionStats: [
+      ["🌾", "High Fiber", "Whole grains, vegetables, fruits and legumes contribute dietary fiber."],
+      ["🫒", "Unsaturated Fats", "Olive oil, nuts and seeds provide predominantly unsaturated fats."],
+      ["🐟", "Omega-3 Sources", "Fish and seafood can provide EPA and DHA omega-3 fatty acids."],
+      ["❤️", "Heart Health", "The overall dietary pattern has been associated with better cardiovascular health."]
+    ],
+
+    theme: "bg-blue-50",
+    accent: "text-blue-700",
+    badge: "bg-blue-100 text-blue-700",
+    border: "border-blue-100",
+
+    foods: [
+      ["🥬", "Vegetables", "Fresh vegetables are central to many meals."],
+      ["🫘", "Legumes", "Chickpeas, lentils and beans provide plant-based protein and fiber."],
+      ["🫒", "Olive Oil", "A traditional source of predominantly unsaturated fat."],
+      ["🐟", "Seafood", "Fish and seafood feature in many Mediterranean food traditions."]
+    ],
+
+    methods:
+      "Grilling, roasting, baking, simmering and stewing.",
+
+    nutrition:
+      "Plant diversity, legumes, whole grains, seafood, nuts and predominantly unsaturated fats."
+  },
+
+  {
+    id: 2,
+    country: "Japanese",
+    flag: "🍱",
+    number: "02",
+    title: "Balance, Variety & Seasonality",
+
+    description:
+      "Traditional Japanese cuisine places strong emphasis on seasonality, variety and the natural characteristics of ingredients. Rice, vegetables, seafood, soy foods, seaweed and fermented foods appear across many Japanese food traditions. This combination can provide protein, fiber, minerals and a wide range of micronutrients.",
+
+    story:
+      "Meals can include several small dishes rather than one large central dish. Presentation, seasonality and careful preparation are important parts of the culinary tradition.",
+
+    healthImpact:
+      "Traditional Japanese dietary patterns are characterized by fish, vegetables, soy foods, seaweed and relatively modest portions across multiple dishes. Research has associated some Japanese dietary patterns with favorable cardiovascular and metabolic outcomes. At the same time, foods such as soy sauce, miso and pickled products can contribute substantial sodium, so the health effect depends on the overall pattern and quantity consumed.",
+
+    nutritionStats: [
+      ["🐟", "Seafood", "Provides protein and, in oily fish, beneficial omega-3 fatty acids."],
+      ["🫘", "Soy Protein", "Tofu, natto and other soy foods provide plant-based protein."],
+      ["🌿", "Sea Vegetables", "Seaweed provides minerals, fiber and distinctive bioactive compounds."],
+      ["🧂", "Sodium Awareness", "Soy sauce, miso and pickled foods can be high in sodium."]
+    ],
+
+    theme: "bg-red-50",
+    accent: "text-red-700",
+    badge: "bg-red-100 text-red-700",
+    border: "border-red-100",
+
+    foods: [
+      ["🍚", "Rice", "Rice is a major staple in traditional Japanese meals."],
+      ["🐟", "Seafood", "Fish and seafood are important components of many meals."],
+      ["🫘", "Soy Foods", "Tofu, miso, natto and other soy foods are widely used."],
+      ["🌿", "Seaweed", "Seaweeds contribute distinctive flavors and nutrients."]
+    ],
+
+    methods:
+      "Steaming, simmering, grilling, pickling, raw preparation and fermentation.",
+
+    nutrition:
+      "Variety of vegetables, seafood, soy foods, seaweed and fermented foods."
+  },
+
+  {
+    id: 3,
+    country: "Indian",
+    flag: "🌶️",
+    number: "03",
+    title: "A World of Regional Food Traditions",
+
+    description:
+      "Indian cuisine is not a single cuisine but a vast collection of regional food traditions. Traditional diets can include pulses, whole and minimally refined grains, vegetables, fruits, nuts, seeds, dairy, herbs and spices. The nutritional profile therefore varies considerably between regions and communities.",
+
+    story:
+      "Rice, wheat, millets, pulses, vegetables, dairy, nuts, seeds, herbs and spices form important parts of many regional diets. South, North, East and West India each have distinctive culinary traditions.",
+
+    healthImpact:
+      "Traditional Indian meals can combine cereals with pulses, vegetables, spices, nuts and seeds, creating opportunities for fiber, plant protein and micronutrient diversity. Diets rich in pulses, whole grains and vegetables may support better glucose control, healthy body weight and cardiovascular health. However, modern versions of some dishes can be high in refined carbohydrates, salt, sugar or added fats, so the traditional ingredients and preparation style matter.",
+
+    nutritionStats: [
+      ["🫘", "Plant Protein", "Pulses such as lentils, chickpeas and beans provide protein and fiber."],
+      ["🌾", "Grain Diversity", "Millets and whole grains can contribute fiber and micronutrients."],
+      ["🌶️", "Spices & Plants", "Herbs and spices add flavor and a variety of plant compounds."],
+      ["💚", "Fiber", "Pulses, vegetables, fruits and whole grains can substantially increase fiber intake."]
+    ],
+
+    theme: "bg-orange-50",
+    accent: "text-orange-700",
+    badge: "bg-orange-100 text-orange-700",
+    border: "border-orange-100",
+
+    foods: [
+      ["🫘", "Pulses", "Lentils, chickpeas and beans are important traditional foods."],
+      ["🌾", "Grains", "Rice, wheat, millet and other grains support diverse meals."],
+      ["🌶️", "Spices", "Spices and herbs create distinctive aromas and flavors."],
+      ["🥬", "Vegetables", "Regional plant diversity contributes to varied meals."]
+    ],
+
+    methods:
+      "Tempering, roasting, steaming, pressure cooking, fermenting, simmering and grilling.",
+
+    nutrition:
+      "Pulses, diverse grains, vegetables, herbs, spices, nuts and seeds."
+  },
+
+  {
+    id: 4,
+    country: "Middle Eastern",
+    flag: "🧆",
+    number: "04",
+    title: "Food Built Around Sharing",
+
+    description:
+      "Middle Eastern food traditions span many countries and communities. Many traditional meals feature legumes, whole grains, vegetables, herbs, nuts, seeds and olive oil, creating a pattern that can provide fiber, plant protein, healthy fats and diverse micronutrients.",
+
+    story:
+      "Food is deeply social. Mezze-style meals, shared plates, breads, dips and grilled foods can bring many different flavors to the table at once.",
+
+    healthImpact:
+      "Traditional Middle Eastern eating patterns can support a high intake of legumes, vegetables, whole grains, nuts and seeds. These foods provide fiber and plant-based nutrients that may contribute to cardiovascular and metabolic health. Chickpeas, lentils and tahini can also improve the nutritional density of meals. However, sodium levels can vary considerably depending on preserved foods, breads, sauces and prepared dishes.",
+
+    nutritionStats: [
+      ["🫘", "Legume Fiber", "Chickpeas, lentils and beans provide fiber and plant protein."],
+      ["🌰", "Healthy Fats", "Nuts, seeds and tahini provide predominantly unsaturated fats."],
+      ["🥗", "Plant Diversity", "Vegetables and herbs contribute vitamins, minerals and plant compounds."],
+      ["🌾", "Whole Grains", "Bulgur and other whole-grain foods can contribute dietary fiber."]
+    ],
+
+    theme: "bg-emerald-50",
+    accent: "text-emerald-700",
+    badge: "bg-emerald-100 text-emerald-700",
+    border: "border-emerald-100",
+
+    foods: [
+      ["🫘", "Legumes", "Chickpeas, lentils and beans appear in many traditional dishes."],
+      ["🌾", "Grains", "Wheat, bulgur and other grains are important staples."],
+      ["🌰", "Seeds & Nuts", "Sesame, tahini, almonds and other nuts add texture and flavor."],
+      ["🥗", "Vegetables", "Eggplant, tomatoes, greens and herbs feature prominently."]
+    ],
+
+    methods:
+      "Grilling, roasting, baking, stewing, simmering and fresh preparation.",
+
+    nutrition:
+      "Legumes, whole grains, vegetables, nuts, seeds and olive oil."
+  },
+
+  {
+    id: 5,
+    country: "Korean",
+    flag: "🇰🇷",
+    number: "05",
+    title: "Fermentation, Variety & Strong Flavors",
+
+    description:
+      "Korean food traditions are known for rice, vegetables, seafood, tofu, fermented foods and a wide variety of side dishes. This structure can provide dietary variety, plant foods, protein and fermented foods within a single meal.",
+
+    story:
+      "Fermentation plays an important role in traditional Korean foods. Meals often combine rice with several side dishes, soups, vegetables and other foods.",
+
+    healthImpact:
+      "The traditional Korean meal structure can encourage variety through vegetables, fermented foods, seafood and side dishes. Higher vegetable and fiber intake may support metabolic and cardiovascular health. Fermented foods are also an important part of Korean food culture, although research on their long-term disease-prevention effects is still developing. Sodium deserves attention because kimchi, fermented pastes, soy sauce and soups can contribute significant amounts.",
+
+    nutritionStats: [
+      ["🥬", "Vegetable Variety", "Multiple vegetable-based side dishes can increase fiber and micronutrient intake."],
+      ["🫙", "Fermented Foods", "Kimchi and fermented foods contribute distinctive microbial and bioactive components."],
+      ["🐟", "Protein", "Fish, seafood and tofu provide varied protein sources."],
+      ["🧂", "Sodium Awareness", "Fermented sauces, kimchi and soups can make sodium intake relatively high."]
+    ],
+
+    theme: "bg-rose-50",
+    accent: "text-rose-700",
+    badge: "bg-rose-100 text-rose-700",
+    border: "border-rose-100",
+
+    foods: [
+      ["🥬", "Vegetables", "Vegetables and greens feature prominently in Korean meals."],
+      ["🫙", "Fermentation", "Fermentation is an important part of Korean culinary tradition."],
+      ["🍚", "Rice", "Rice commonly serves as a staple component."],
+      ["🐟", "Seafood", "Fish and seafood are used in many regional dishes."]
+    ],
+
+    methods:
+      "Fermentation, steaming, grilling, simmering, stir-frying and braising.",
+
+    nutrition:
+      "Vegetables, fermented foods, seafood, tofu and diverse side dishes."
+  },
+
+  {
+    id: 6,
+    country: "Mexican",
+    flag: "🇲🇽",
+    number: "06",
+    title: "Corn, Beans, Chiles & Centuries of Tradition",
+
+    description:
+      "Traditional Mexican food is deeply connected to Indigenous agricultural traditions and ingredients cultivated in Mesoamerica. Corn, beans, squash, chiles, tomatoes, herbs and seeds create a diverse food system rich in plant foods and traditional preparation techniques.",
+
+    story:
+      "Corn, beans, squash, chiles, tomatoes, herbs and seeds are central to many traditional dishes. These ingredients demonstrate how staple foods can be combined to create diverse and flavorful meals.",
+
+    healthImpact:
+      "The traditional combination of corn and beans is nutritionally important because it brings together complementary sources of plant protein, carbohydrates and fiber. Beans, vegetables, whole corn foods and other plant ingredients can support digestive, metabolic and cardiovascular health. Traditional preparation methods such as nixtamalization can also improve the nutritional characteristics of maize. Health outcomes depend on whether these traditional foods are retained or replaced by highly processed foods.",
+
+    nutritionStats: [
+      ["🌽", "Whole Corn", "Traditional maize foods can provide carbohydrates, fiber and micronutrients."],
+      ["🫘", "Beans", "Beans provide plant protein, fiber, folate and minerals."],
+      ["🥑", "Unsaturated Fats", "Avocado provides predominantly unsaturated fat."],
+      ["🥬", "Plant Diversity", "Vegetables, herbs and chiles add micronutrients and plant compounds."]
+    ],
+
+    theme: "bg-yellow-50",
+    accent: "text-orange-700",
+    badge: "bg-yellow-100 text-orange-700",
+    border: "border-yellow-100",
+
+    foods: [
+      ["🌽", "Corn", "A foundational traditional staple."],
+      ["🫘", "Beans", "A major source of plant-based protein and fiber."],
+      ["🌶️", "Chiles", "Important for flavor, aroma and culinary identity."],
+      ["🥑", "Avocado", "A traditional regional food used in many dishes."]
+    ],
+
+    methods:
+      "Grilling, roasting, simmering, baking, steaming and stone-ground preparation.",
+
+    nutrition:
+      "Corn, beans, vegetables, chiles, herbs, seeds and other plant foods."
+  },
+
+  {
+    id: 7,
+    country: "Thai",
+    flag: "🇹🇭",
+    number: "07",
+    title: "A Cuisine Built Around Balance of Flavors",
+
+    description:
+      "Thai cuisine is recognized for combining sweet, sour, salty, spicy and aromatic elements. Rice, vegetables, herbs, seafood and other proteins form the foundation of many meals, while fresh herbs and spices contribute flavor without relying entirely on heavy sauces.",
+
+    story:
+      "Rice, vegetables, herbs, seafood and other proteins form the foundation of many Thai meals. Fresh herbs, spices and aromatic ingredients contribute distinctive flavors.",
+
+    healthImpact:
+      "Traditional Thai meals can provide substantial plant diversity through vegetables, herbs, aromatics and fresh ingredients. Seafood can contribute lean protein and omega-3 fatty acids, while herbs and spices add a variety of plant compounds. However, some modern Thai dishes can contain considerable sodium, sugar or added fats through sauces, curry pastes and sweetened beverages. The healthier pattern is therefore more closely associated with ingredient diversity and preparation than with every Thai dish.",
+
+    nutritionStats: [
+      ["🌿", "Herb Diversity", "Fresh herbs and aromatics contribute micronutrients and plant compounds."],
+      ["🐟", "Seafood Protein", "Fish and seafood provide protein and, in some species, omega-3 fats."],
+      ["🥬", "Vegetables", "Vegetables increase fiber, vitamins and mineral intake."],
+      ["🧂", "Sauce Awareness", "Fish sauce, soy sauce and prepared sauces can increase sodium intake."]
+    ],
+
+    theme: "bg-green-50",
+    accent: "text-green-700",
+    badge: "bg-green-100 text-green-700",
+    border: "border-green-100",
+
+    foods: [
+      ["🌶️", "Spicy", "Chiles provide heat and distinctive flavor."],
+      ["🍋", "Sour", "Lime and other sour ingredients create brightness."],
+      ["🌿", "Aromatic Herbs", "Fresh herbs and aromatics are central to many dishes."],
+      ["🍚", "Rice", "Rice is an important staple in Thai food traditions."]
+    ],
+
+    methods:
+      "Stir-frying, steaming, grilling, simmering and fresh preparation.",
+
+    nutrition:
+      "Vegetables, herbs, seafood, rice and diverse plant-based ingredients."
+  }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+const [currentCuisine, setCurrentCuisine] = useState(0);
+
+const nextCuisine = () => {
+  setCurrentCuisine((prev) => (prev + 1) % cuisines.length);
+};
+
+const previousCuisine = () => {
+  setCurrentCuisine(
+    (prev) => (prev - 1 + cuisines.length) % cuisines.length
+  );
+};
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentCuisine((prev) => (prev + 1) % cuisines.length);
+  }, 8000);
+
+  return () => clearInterval(timer);
+}, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-orange-50">
@@ -671,7 +1016,357 @@ export const Home = () => {
 
         </div>
 
+
       </section>
+      {/* =====================================================
+    GLOBAL HEALTHY CUISINES
+====================================================== */}
+{/* =====================================================
+    GLOBAL CUISINES INTRO
+====================================================== */}
+
+
+
+{/* =====================================================
+    GLOBAL CUISINE SLIDER
+====================================================== */}
+
+
+
+{/* =====================================================
+    CUISINE SLIDER
+====================================================== */}
+
+<section
+  className={`px-4 sm:px-6 py-20 transition-all duration-700
+    ${cuisines[currentCuisine].theme}`}
+>
+  <div className="max-w-7xl mx-auto">
+
+    {/* Slider Header */}
+
+    <div className="flex flex-col sm:flex-row
+      sm:items-end sm:justify-between gap-5">
+
+      <div>
+
+        <span
+          className={`inline-flex items-center gap-2 px-4 py-2
+            rounded-full text-sm font-bold
+            ${cuisines[currentCuisine].badge}`}
+        >
+          🌎 GLOBAL CUISINE
+        </span>
+
+        <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl
+          font-black text-gray-900">
+
+          {cuisines[currentCuisine].flag}{" "}
+          {cuisines[currentCuisine].country} Cuisine
+
+        </h2>
+
+      </div>
+
+      {/* Counter */}
+
+      <div className="text-sm font-bold text-gray-500">
+
+        {String(currentCuisine + 1).padStart(2, "0")}
+        {" / "}
+        {String(cuisines.length).padStart(2, "0")}
+
+      </div>
+
+    </div>
+
+
+    {/* =================================================
+        MAIN SLIDE
+    ================================================== */}
+
+    <div className="mt-10">
+
+      <div className="grid lg:grid-cols-2 gap-10
+        items-center">
+
+        {/* LEFT CONTENT */}
+
+        <div>
+
+          <span
+            className={`text-sm font-bold tracking-wider
+              ${cuisines[currentCuisine].accent}`}
+          >
+            {cuisines[currentCuisine].flag}{" "}
+            {cuisines[currentCuisine].number} •{" "}
+            {cuisines[currentCuisine].country.toUpperCase()}
+          </span>
+
+          <h3 className="mt-5 text-4xl sm:text-5xl
+            font-black text-gray-900 leading-tight">
+
+            {cuisines[currentCuisine].title}
+
+          </h3>
+
+          <p className="mt-6 text-lg text-gray-700 leading-8">
+
+            {cuisines[currentCuisine].description}
+
+          </p>
+
+          <p className="mt-5 text-gray-600 leading-7">
+
+            {cuisines[currentCuisine].story}
+
+          </p>
+
+
+          {/* Cuisine highlights */}
+
+          <div className="mt-8 flex flex-wrap gap-3">
+
+            <span className="px-4 py-2 rounded-full bg-white
+              shadow-sm text-sm font-semibold text-gray-700">
+
+              🌱 Diverse Ingredients
+
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-white
+              shadow-sm text-sm font-semibold text-gray-700">
+
+              🔥 Traditional Cooking
+
+            </span>
+
+            <span className="px-4 py-2 rounded-full bg-white
+              shadow-sm text-sm font-semibold text-gray-700">
+
+              ❤️ Food Culture
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        {/* RIGHT INFORMATION */}
+
+        <div className="bg-white rounded-[2rem] p-7 sm:p-9
+          shadow-xl border border-white">
+
+          <h3 className="text-2xl font-black text-gray-900">
+
+            What Defines {cuisines[currentCuisine].country}
+            Food?
+
+          </h3>
+
+
+          {/* Ingredients */}
+
+          <div className="mt-7">
+
+            <p
+              className={`font-bold ${cuisines[currentCuisine].accent}`}
+            >
+              🥬 Key Foods
+            </p>
+
+            <div className="mt-4 grid sm:grid-cols-2 gap-4">
+
+              {cuisines[currentCuisine].foods.map(
+                ([icon, title, text]) => (
+
+                  <div
+                    key={title}
+                    className="p-4 rounded-2xl bg-gray-50
+                      border border-gray-100"
+                  >
+
+                    <div className="text-3xl">
+                      {icon}
+                    </div>
+
+                    <h4 className="mt-3 font-bold text-gray-900">
+                      {title}
+                    </h4>
+
+                    <p className="mt-1 text-sm text-gray-600
+                      leading-6">
+                      {text}
+                    </p>
+
+                  </div>
+
+                )
+              )}
+
+            </div>
+
+          </div>
+
+
+          {/* Cooking */}
+
+          <div className="mt-7 pt-6 border-t border-gray-100">
+
+            <p
+              className={`font-bold ${cuisines[currentCuisine].accent}`}
+            >
+              🔥 Cooking Methods
+            </p>
+
+            <p className="mt-2 text-gray-600 leading-7">
+              {cuisines[currentCuisine].methods}
+            </p>
+
+          </div>
+
+
+          {/* Nutrition */}
+
+          <div className="mt-6 pt-6 border-t border-gray-100">
+
+            <p
+              className={`font-bold ${cuisines[currentCuisine].accent}`}
+            >
+              💚 Nutrition Perspective
+            </p>
+
+            <p className="mt-2 text-gray-600 leading-7">
+              {cuisines[currentCuisine].nutrition}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* =================================================
+        NAVIGATION
+    ================================================== */}
+
+    <div className="mt-12 flex items-center
+      justify-between gap-5">
+
+      {/* Previous */}
+
+      <button
+        onClick={previousCuisine}
+        aria-label="Previous cuisine"
+        className="w-12 h-12 rounded-full bg-white
+          shadow-md border border-gray-100
+          flex items-center justify-center
+          text-xl hover:-translate-y-1 hover:shadow-lg
+          transition-all"
+      >
+        ←
+      </button>
+
+
+      {/* Dots */}
+
+      <div className="flex items-center gap-2">
+
+        {cuisines.map((cuisine, index) => (
+
+          <button
+            key={cuisine.id}
+            onClick={() => setCurrentCuisine(index)}
+            aria-label={`Go to ${cuisine.country} cuisine`}
+            className={`transition-all duration-300 rounded-full
+              ${
+                currentCuisine === index
+                  ? "w-8 h-3 bg-green-900"
+                  : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
+              }`}
+          />
+
+        ))}
+
+      </div>
+
+
+      {/* Next */}
+
+      <button
+        onClick={nextCuisine}
+        aria-label="Next cuisine"
+        className="w-12 h-12 rounded-full bg-white
+          shadow-md border border-gray-100
+          flex items-center justify-center
+          text-xl hover:-translate-y-1 hover:shadow-lg
+          transition-all"
+      >
+        →
+      </button>
+
+    </div>
+
+
+    {/* =================================================
+        MINI CUISINE SELECTOR
+    ================================================== */}
+
+    <div className="mt-10 overflow-x-auto pb-3">
+
+      <div className="flex gap-3 min-w-max justify-center">
+
+        {cuisines.map((cuisine, index) => (
+
+          <button
+            key={cuisine.id}
+            onClick={() => setCurrentCuisine(index)}
+            className={`px-5 py-3 rounded-xl
+              font-semibold text-sm transition-all
+              ${
+                currentCuisine === index
+                  ? "bg-green-950 text-white shadow-lg"
+                  : "bg-white text-gray-700 border border-gray-200 hover:border-green-300"
+              }`}
+          >
+
+            {cuisine.flag} {cuisine.country}
+
+          </button>
+
+        ))}
+
+      </div>
+
+    </div>
+
+
+    {/* CTA */}
+
+    <div className="mt-12 text-center">
+
+      <Link
+        to="/cuisines"
+        className="inline-flex items-center gap-2 px-8 py-4
+          rounded-xl bg-green-950 text-white font-bold
+          shadow-lg hover:bg-green-900 hover:-translate-y-1
+          transition-all"
+      >
+        🌎 Explore {cuisines[currentCuisine].country} Cuisine
+
+        <span>→</span>
+
+      </Link>
+
+    </div>
+
+  </div>
+</section>
+
 
 
       {/* =====================================================
