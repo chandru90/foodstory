@@ -31,9 +31,9 @@
   "include": [
     "/",
     "/foodstory",
-    "/aboutus",
-    "/nutrireads",
-    "/recipeplan" 
+    "/aboutus"
+    
+    
   ]
 },
   "eslintConfig": {
