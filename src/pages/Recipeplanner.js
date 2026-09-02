@@ -2770,6 +2770,7 @@ font-black
   </h2>
 
   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {/* Calories */}
     <div className="bg-orange-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Calories</p>
       <h3 className="text-2xl font-bold text-orange-600">
@@ -2777,6 +2778,7 @@ font-black
       </h3>
     </div>
 
+    {/* Daily Value */}
     <div className="bg-blue-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Daily Value</p>
       <h3 className="text-2xl font-bold text-blue-600">
@@ -2784,13 +2786,15 @@ font-black
       </h3>
     </div>
 
+    {/* Protein */}
     <div className="bg-green-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Protein</p>
       <h3 className="text-2xl font-bold text-green-600">
-        {day?.summary?.Protiens_dv ?? 0}
+        {day?.summary?.proteins_dv ?? 0}
       </h3>
     </div>
 
+    {/* Carbs */}
     <div className="bg-yellow-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Carbs</p>
       <h3 className="text-2xl font-bold text-yellow-600">
@@ -2798,6 +2802,7 @@ font-black
       </h3>
     </div>
 
+    {/* Fats */}
     <div className="bg-red-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Fats</p>
       <h3 className="text-2xl font-bold text-red-600">
@@ -2805,6 +2810,7 @@ font-black
       </h3>
     </div>
 
+    {/* Fiber */}
     <div className="bg-purple-50 rounded-xl p-4 text-center">
       <p className="text-sm text-gray-500">Fiber</p>
       <h3 className="text-2xl font-bold text-purple-600">

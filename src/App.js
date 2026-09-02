@@ -101,10 +101,10 @@ export default function App() {
           path="/nutrireads"
           element={<Nutrireads />}
         />
-        <Route
+        {/* <Route
           path="/recipeplan"
           element={<Recipeplan />}
-        />
+        /> */}
       </Routes>
     </Router>
   );
