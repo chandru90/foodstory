@@ -25,17 +25,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "reactSnap": {
-  "source": "build",
-  "include": [
-    "/",
-    "/foodstory",
-    "/aboutus"
-    
-    
-  ]
-},
+    "source": "build",
+    "include": [
+      "/",
+      "/foodstory",
+      "/aboutus"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
