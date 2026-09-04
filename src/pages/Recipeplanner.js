@@ -1715,9 +1715,10 @@ return(
         !loading &&
         recipes.length===0 &&
 
-        <h3>
-          No recipes generated
-        </h3>
+    <div className="text-center py-5">
+  <h3>🍽️ No Recipes Yet</h3>
+  <p>Choose your preferences and generate a personalized meal plan.</p>
+</div>
 
       }
 
