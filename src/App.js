@@ -8,7 +8,7 @@ import { Navbar } from "./Navbar.js";
 import Recipeplanner from "./pages/Recipeplanner.js";
 import Nutrireads from "./pages/Nutrireads.js";
 
-import Recipeplan from "./pages/Recipeplan.js";
+
 // import Nutriread from "./pages/Nutrireads.js";
 // import FoodStory from "./pages/FoodStory.js";
 import { Home } from "./Home.js";
