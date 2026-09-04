@@ -505,17 +505,10 @@ At its simplest, kimchi is a preparation of vegetables that are seasoned and fer
 
 Cabbage and radish are commonly used, although Korean food culture includes many different kinds of kimchi.
 
-Kimchi can provide:
+Kimchi can provide
 
-Crunch.
 
-Acidity.
 
-Saltiness.
-
-Spice.
-
-Umami.
 
 But its story goes deeper.
 
