@@ -994,7 +994,7 @@ Crispy edges, a soft center, fragrant olive oil, and fresh herbs show that great
           </h2>
 
           <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-9 max-w-3xl mx-auto">
-            A meal can start a conversation.
+            A meal can start a conversation
             <br />
             A recipe can preserve a tradition.
             <br />
