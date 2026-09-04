@@ -1410,19 +1410,6 @@ Crispy edges, a soft center, fragrant olive oil, and fresh herbs show that great
 
 
 
-              {/* GLOBAL CUISINES PAGE NAVIGATION */}
-
-              <div className="text-center mt-8">
-
-                <Link
-                  to="/globalcuisines"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-orange-500 text-white font-bold shadow-md hover:bg-orange-600 hover:-translate-y-1 transition-all"
-                >
-                  🌎 Explore Global Cuisines
-                  <span>→</span>
-                </Link>
-
-              </div>
             </>
 
           ) : (
