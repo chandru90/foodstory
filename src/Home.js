@@ -315,6 +315,28 @@ It developed over thousands of years among the diverse communities living around
 
 Its foundations can be traced to ancient civilizations in the Mediterranean and the wider Fertile Crescent, where agriculture provided wheat, olives, grapes, legumes, vegetables, and herbs.
 
+If one ingredient could tell the story of Mediterranean cuisine, it would be the olive.
+
+Olive trees have been cultivated around the Mediterranean for thousands of years. Their fruit became olive oil, an essential part of cooking and an important part of everyday life.
+The Mediterranean was never an isolated place.
+
+For centuries, people travelled across its waters, carrying ingredients, spices, ideas, and cooking traditions with them.
+
+Greeks, Romans, Arabs, Ottomans, North Africans, and many other cultures contributed to the region's evolving food traditions.
+
+This is why Mediterranean cuisine cannot be described as a single cuisine.
+
+There are many Mediterranean cuisines.
+
+Greek dishes celebrate olives, yogurt, grains, and seafood.
+
+Italian cooking transforms grains, tomatoes, vegetables, and herbs into pasta and countless regional dishes.
+
+Spanish cuisine brings together olive oil, vegetables, seafood, legumes, and distinctive cooking traditions.
+
+Across the eastern and southern Mediterranean, dishes such as hummus, falafel, tabbouleh, and grilled vegetables reflect centuries of regional history and cultural exchange.
+
+
 The Mediterranean diet has attracted enormous attention because research has repeatedly associated Mediterranean-style eating patterns with better cardiovascular health and other health benefits.
 
 Researchers became particularly interested in the dietary patterns of Mediterranean populations during the mid-20th century, when observations from the Seven Countries Study helped draw attention to differences in cardiovascular disease and dietary patterns.
@@ -347,9 +369,27 @@ And each element has its own place.
 
 This simple picture captures something important about Japanese cuisine.
 
-Sushi is one of Japan's most recognized foods, combining vinegared rice with fresh seafood, vegetables, and other ingredients. It reflects Japanese values of freshness, seasonality, balance, and precise preparation.
+If one ingredient represents the foundation of Japanese cuisine, it is rice.
 
-Miso Soup is a traditional everyday dish made with miso and dashi, often accompanied by tofu, seaweed, and vegetables. It highlights the importance of fermentation, umami, and simple ingredients in Japanese cuisine.`,
+Rice has been an important part of Japanese food culture for centuries and remains a staple of everyday meals. It appears in many forms, from steamed rice served alongside other dishes to sushi, rice balls, rice porridge, and traditional sweets.
+
+For many Japanese meals, rice is more than just a side dish.
+
+It is the foundation around which the meal is built.
+
+One of the most important ideas in Japanese cooking is umami — a savory taste that adds depth and richness to food.
+
+Ingredients such as miso, soy sauce, kombu seaweed, mushrooms, and fermented foods can contribute to umami.
+
+Sushi, ramen, and tempura are among the most recognizable Japanese foods around the world, but they represent only a small part of Japanese cuisine.
+
+Sushi combines seasoned rice with ingredients such as seafood, vegetables, and egg. It has developed into many different regional and modern styles.
+
+Ramen consists of noodles served in a flavorful broth, commonly accompanied by toppings such as meat, eggs, vegetables, and seaweed. Different regions of Japan have developed their own ramen traditions.
+
+Tempura features seafood or vegetables coated in a light batter and fried until crisp.
+
+Together, these dishes show the variety of textures and techniques found in Japanese cooking.`,
   },
 
   {
@@ -375,11 +415,19 @@ This simple picture captures something important about Mexican cuisine.
 
 Mexican food isn't simply tacos, burritos, or nachos.
 
-If there is one ingredient that tells the story of Mexican cuisine, it is maize, or corn.
+If one ingredient represents the heart of Mexican cuisine, it is maize, or corn.
 
-So Mexican cuisine isn't simply "spicy."
+Corn has been cultivated in Mesoamerica for thousands of years and remains an essential part of Mexican food culture. It is transformed into tortillas, tamales, antojitos, and many other traditional foods.
 
-Corn has been cultivated in Mesoamerica for thousands of years.`,
+Tacos come in countless regional varieties, with fillings ranging from grilled meats and seafood to vegetables and slow-cooked preparations.
+
+Burritos are especially associated with northern Mexico and are commonly made with a soft flour tortilla wrapped around fillings such as beans, meat, rice, and vegetables.
+
+Nachos have a more recent history. They originated in the Mexican border region and later became popular internationally.
+
+These foods represent only a small part of Mexico's enormous culinary tradition.
+
+Together, they show how Mexican cuisine can be simple, creative, adaptable, and deeply connected to everyday life.`,
   },
 
   {
@@ -399,21 +447,15 @@ The food is vibrant.
 
 The aromas are fresh.
 
-The flavors can be spicy, sour, salty, sweet, and deeply aromatic—all in the same meal.
+The flavors can be spicy, sour, salty, sweet, and deeply aromatic — sometimes all in the same meal.
 
 This simple picture captures something important about Thai cuisine.
 
-Thai food isn't simply pad Thai, green curry, or tom yum.
+Thai food isn't simply Pad Thai, green curry, or Tom Yum.
 
-If there is one ingredient that tells the story of Thai cuisine, it is rice.
+If one ingredient represents the foundation of Thai cuisine, it is rice.
 
-Rice is more than a carbohydrate.
-
-It is deeply connected with Thai agriculture, culture, and everyday meals.
-
-Different varieties are used in different regions and dishes.
-
-Jasmine rice is especially associated with Thai cuisine.
+Rice has been central to Thai agriculture, culture, and everyday meals for centuries. Jasmine rice is commonly enjoyed with curries, stir-fries, grilled foods, and other dishes.
 
 Walk into a Thai kitchen and you may encounter an extraordinary collection of aromas.
 
@@ -423,7 +465,7 @@ Thai basil.
 
 Galangal.
 
-Kaffir lime leaves.
+Makrut lime leaves.
 
 Coriander.
 
@@ -437,37 +479,15 @@ These ingredients don't simply add flavor.
 
 They create layers of aroma.
 
-The Story Behind Pad Thai
+Pad Thai, Tom Yum, and Thai curries are among the most recognizable Thai foods around the world, but they represent only a small part of Thailand's culinary tradition.
 
-Few dishes are as globally associated with Thailand as pad Thai.
+Pad Thai is a stir-fried noodle dish commonly prepared with rice noodles, vegetables, egg, and a flavorful combination of sweet, sour, and salty ingredients.
 
-It combines rice noodles with ingredients that can include:
+Tom Yum is a fragrant hot-and-sour soup often prepared with ingredients such as lemongrass, galangal, lime leaves, chilies, and seafood or meat.
 
-Tofu.
+Green Curry combines coconut milk with a fragrant green curry paste and ingredients such as vegetables, herbs, and meat or seafood.
 
-Egg.
-
-Vegetables.
-
-Bean sprouts.
-
-Peanuts.
-
-Tamarind-based flavors.
-
-Fish sauce or other seasonings.
-
-Lime.
-
-Chilies.
-
-What makes pad Thai fascinating is that it represents more than a noodle dish.
-
-It reflects the influence of noodles and Chinese culinary techniques combined with Thai flavor preferences.
-
-The dish eventually became strongly associated with Thai national food culture.
-
-Today, it has traveled far beyond Thailand.`,
+Together, these dishes demonstrate the variety of flavors and cooking techniques found in Thai cuisine.`,
   },
 
   {
@@ -501,14 +521,11 @@ It can be served alongside vegetables, seafood, meat, tofu, soups, and fermented
 
 Few foods represent Korean cuisine as strongly as kimchi.
 
-At its simplest, kimchi is a preparation of vegetables that are seasoned and fermented.
+Kimchi is a traditional fermented food commonly made from vegetables such as napa cabbage or radish, combined with seasonings that may include chili, garlic, ginger, and other ingredients.
 
-Cabbage and radish are commonly used, although Korean food culture includes many different kinds of kimchi.
+There are many varieties of kimchi, and recipes can differ according to region, season, and family tradition.
 
-Kimchi can provide
-
-
-
+Kimchi can provide sour, spicy, salty, and deeply savory flavors.
 
 But its story goes deeper.
 
@@ -524,69 +541,27 @@ It is a whole world of recipes.
 
 Perhaps one of the most fascinating aspects of Korean cuisine is its long relationship with fermentation.
 
-Fermentation is used in foods such as:
+Fermentation is used in foods such as kimchi, doenjang, gochujang, and ganjang.
 
-Kimchi.
-
-Doenjang — fermented soybean paste.
-
-Gochujang — fermented chili paste.
-
-Ganjang — traditional Korean soy sauce.
-
-These foods demonstrate how microorganisms can transform basic ingredients.
-
-Soybeans can become deeply savory pastes.
-
-Vegetables can develop acidity and complexity.
-
-Chili paste can become rich, sweet, spicy, and intensely flavorful.
+These foods demonstrate how microorganisms can transform basic ingredients into complex and deeply flavored foods.
 
 Korean barbecue is famous around the world.
 
-But its significance goes beyond grilled meat.
+Korean barbecue, bibimbap, and tteokbokki are among the best-known Korean foods around the world, but they represent only a small part of Korean cuisine.
 
-The cooking process itself can become part of the meal.
+Korean BBQ involves grilling marinated or seasoned meats, often at the table, and eating them with lettuce wraps, sauces, garlic, and side dishes.
 
-People gather around a grill.
+Bibimbap brings rice together with assorted vegetables, meat or other toppings, and a flavorful sauce, creating a colorful and balanced bowl.
 
-Food is cooked together.
+Tteokbokki features chewy rice cakes cooked in a flavorful sauce and is strongly associated with Korean street food.
 
-Side dishes are shared.
+One of the most distinctive features of a Korean meal is banchan.
 
-Lettuce leaves, sauces, and vegetables can be combined with grilled ingredients.
+Banchan are small side dishes served alongside the main meal. They can include seasoned vegetables, kimchi, fish, tofu, eggs, and other preparations.
 
-The meal becomes interactive.
+Instead of having one large dish dominate the table, several smaller dishes allow diners to experience different flavors throughout the meal.
 
-This tells us something important about Korean food culture:
-
-Eating is not always simply about consuming food.
-
-It can be about participating in the meal together.
-
-Banchan: Many Small Dishes, One Table
-
-A Korean meal may include an assortment of small side dishes known as banchan.
-
-These can include:
-
-Kimchi.
-
-Seasoned vegetables.
-
-Pickled foods.
-
-Tofu.
-
-Seaweed.
-
-Bean sprouts.
-
-Other regional preparations.
-
-The idea is fascinating.
-
-Instead of putting everything into one large dish, a meal can contain many smaller tastes.
+A simple bowl of rice can become an entire feast when surrounded by banchan.
 
 One bite may be spicy.
 
@@ -598,7 +573,9 @@ Another fermented.
 
 Another nutty.
 
-This creates variety without requiring one dominant centerpiece.`,
+This creates variety without requiring one dominant centerpiece.
+
+At its heart, Korean cuisine is about bold flavors, deep traditions, and the joy of sharing food together.`,
   },
 
   {
@@ -624,21 +601,7 @@ This simple picture captures something important about Middle Eastern cuisine.
 
 Middle Eastern food isn't simply hummus, falafel, kebabs, or shawarma.
 
-The Middle East is not one single culinary culture.
-
-Food differs across:
-
-Levantine cuisine.
-
-Arabian Peninsula cuisine.
-
-Persian cuisine.
-
-Mesopotamian traditions.
-
-Egyptian cuisine.
-
-Turkish and neighboring culinary traditions.
+The Middle East is not one single culinary culture. It is a broad region containing many different countries, communities, landscapes, and food traditions.
 
 Flatbread is one of the simplest foods imaginable.
 
@@ -648,59 +611,27 @@ Water.
 
 Heat.
 
-Yet across the Middle East, bread can take many forms.
-
-Pita and other flatbreads can be:
-
-Baked.
-
-Stuffed.
-
-Used for dipping.
-
-Wrapped around food.
-
-Served alongside stews.
-
-Bread can function almost like a utensil.
-
-Instead of using a fork to pick up food, a piece of bread can become part of the eating experience.
+Yet across the Middle East, bread can take many forms and plays an important role in everyday meals.
 
 Few foods are as globally recognized as hummus.
 
-At its basic level:
+At its basic level, hummus combines chickpeas, tahini, lemon, garlic, and olive oil to create a creamy and flavorful dish.
 
-Chickpeas.
-
-Tahini.
-
-Lemon.
-
-Garlic.
-
-Olive oil.
-
-These ingredients can create a creamy and flavorful dip.
-
-But hummus represents something larger.
-
-And today, hummus has traveled far beyond the Middle East.
+But hummus represents something larger: the importance of legumes, sesame, olive oil, and shared foods in many regional food traditions.
 
 Falafel is another globally popular Middle Eastern food.
 
 Traditionally made from legumes such as chickpeas or fava beans depending on regional tradition, the mixture is seasoned with herbs and spices and cooked into small portions.
 
-It can be served:
+Falafel demonstrates how inexpensive ingredients can become satisfying, flavorful food.
 
-In bread.
+Across the region, food often becomes a social experience.
 
-With salad.
+Mezze can bring together many small dishes, allowing people to share hummus, salads, vegetables, dips, breads, grilled foods, and other preparations around one table.
 
-With tahini.
+The result is not simply a meal.
 
-As part of a larger meal.
-
-Falafel demonstrates how inexpensive ingredients can become satisfying, flavorful food.`,
+It is an invitation to slow down, share, and enjoy many different flavors together.`,
   },
 
   {
@@ -712,27 +643,46 @@ Falafel demonstrates how inexpensive ingredients can become satisfying, flavorfu
     description:
       "Simple ingredients transformed into comforting dishes with pasta, vegetables, tomatoes, herbs, and olive oil.",
     highlight: "Pasta • Tomato • Herbs • Olive Oil",
-    desc: `Imagine a table filled with crusty bread, ripe tomatoes, fresh basil, olive oil, vegetables, beans, pasta, and cheese. The aroma of garlic and herbs fills the kitchen as family and friends gather around the table.
+    desc: `Imagine a table filled with crusty bread, ripe tomatoes, fresh basil, olive oil, vegetables, beans, pasta, and cheese.
+
+The aroma of garlic and herbs fills the kitchen as family and friends gather around the table.
 
 This is the heart of Italian cuisine.
 
 Italian food is more than pizza, pasta, and gelato.
 
-Pasta is perhaps the best example of Italian creativity. With simple ingredients such as flour, water, and sometimes eggs, Italians created countless shapes—from spaghetti and penne to ravioli and lasagna.
+It is also about regional identity, seasonal ingredients, family traditions, and the idea that simple ingredients can create extraordinary food.
+
+Pasta is perhaps the best example of Italian creativity.
+
+With simple ingredients such as flour, water, and sometimes eggs, Italian cooks created countless shapes — from spaghetti and penne to ravioli and lasagna.
 
 Each shape interacts differently with sauces, showing an important idea in Italian cooking: even the shape of food can influence the eating experience.
 
-Pizza's modern identity is closely connected with Naples and southern Italy. Its basic combination of dough, tomato, cheese, and local toppings transformed humble ingredients into something extraordinary.
+Pizza's modern identity is closely connected with Naples and southern Italy.
 
-Pizza also tells a social story. Affordable ingredients could create a satisfying meal, making it accessible to ordinary people. Eventually, pizza traveled far beyond Italy and became a global food.
+Its basic combination of dough, tomato, cheese, and local toppings transformed humble ingredients into something extraordinary.
 
-Focaccia: When Bread Becomes a Canvas
+Pizza also tells a social story.
 
-Focaccia captures the same Italian philosophy. Simple bread dough, olive oil, herbs, and salt can become something memorable.
+Affordable ingredients could create a satisfying meal, making it accessible to ordinary people.
 
-Crispy edges, a soft center, fragrant olive oil, and fresh herbs show that great food doesn't always require complicated ingredients.`,
+Eventually, pizza traveled far beyond Italy and became a global food.
+
+Focaccia captures the same Italian philosophy.
+
+Simple bread dough, olive oil, herbs, and salt can become something memorable.
+
+Crispy edges, a soft center, fragrant olive oil, and fresh herbs show that great food doesn't always require complicated ingredients.
+
+Across Italy, cuisine changes from region to region.
+
+Northern Italian cooking may feature rice, polenta, butter, and rich sauces, while central and southern regions are known for ingredients such as tomatoes, olive oil, wheat, vegetables, and seafood.
+
+From a simple bowl of pasta to an elaborate regional feast, Italian cuisine celebrates the idea that good food can begin with a few excellent ingredients and careful preparation.`,
   },
 ];
+
 
   // ============================================================
   // CURRENT CUISINE
@@ -1528,9 +1478,7 @@ Crispy edges, a soft center, fragrant olive oil, and fresh herbs show that great
           Food connects us. Stories inspire us. Recipes bring us together.
         </p>
 
-        <p className="mt-2 text-sm text-green-400">
-          Cook • Share • Discover • Connect
-        </p>
+        
 
       </footer>
 

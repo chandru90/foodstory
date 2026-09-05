@@ -997,6 +997,10 @@ Atoles.
 Tostadas.
 Corn-based snacks.
 Masa for countless traditional foods.
+
+Tacos, burritos, and nachos are some of the most recognizable foods associated with Mexican cuisine, but each tells a different story. Tacos began as a simple way of enjoying flavorful fillings wrapped in a tortilla and have evolved into countless regional varieties. Burritos, commonly associated with northern Mexico, bring ingredients such as beans, meat, rice, and vegetables together inside a soft flour tortilla. Nachos are a more modern creation, born in the Mexican border region and later becoming popular around the world.
+
+Together, these foods show how Mexican cuisine can be simple, creative, adaptable, and deeply connected to everyday life. Yet they are only a small part of Mexico's much larger culinary story.
 `
   },
 
