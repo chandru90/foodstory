@@ -4,10 +4,10 @@
 import { useState } from "react";
 import { IntlProvider } from "react-intl";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Navbar } from "./Navbar.js";
+// import { Navbar } from "./Navbar.js";
 import Recipeplanner from "./pages/Recipeplanner.js";
 import Nutrireads from "./pages/Nutrireads.js";
-
+import Navbar from "./Navbar.js";
 
 // import Nutriread from "./pages/Nutrireads.js";
 // import FoodStory from "./pages/FoodStory.js";
