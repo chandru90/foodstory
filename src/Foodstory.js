@@ -1397,7 +1397,7 @@ return (
   const item = sections[activeSection];
 
   return (
-    <div className="relative rounded-2xl sm:p-0 p-6 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden mt-4  md:mt-10 ml-0 md:ml-10 mb-5 md:mb-20">
+    <div className="relative rounded-2xl sm:p-0 p-1 bg-black shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden mt-4  md:mt-10 ml-0 md:ml-10 mb-5 md:mb-20">
 
       <div
   key={item.id}
@@ -1531,7 +1531,8 @@ speakText(translatedDescription, item.id);
     w-full
     overflow-y-auto
     overflow-x-hidden
-    pr-3
+    pl-2
+    pr-2
     hide-scrollbar
 "
 >
