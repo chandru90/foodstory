@@ -1523,35 +1523,36 @@ speakText(translatedDescription, item.id);
 
 
       {/* Text */}
-    <div
+  <div
   ref={(el) => (containerRefs.current[item.id] = el)}
   className="
     flex-1
+    min-w-0
+    w-full
     overflow-y-auto
+    overflow-x-hidden
     pr-3
     hide-scrollbar
-    text-gray-900
-    
-  "
+"
 >
  <p
+  lang="en"
+  className="
+    w-full
+    max-w-full
+    break-words
+    hyphens-auto
+    sm:break-normal
+    sm:hyphens-none
+  "
   style={{
     fontFamily: "Merriweather",
-    fontSize: "1.5rem",
+    fontSize: "clamp(1.15rem, 4vw, 1.5rem)",
     fontWeight: 800,
-    lineHeight: "2.2rem",
-    // color: "#BDB2FF",
-    //  color: "#F2EAD3",
-//  color: "#7FE9DE",
-
- color: "#FBF6EE",
- 
-    
-    
+    lineHeight: "clamp(1.8rem, 5.5vw, 2.2rem)",
+    color: "#FBF6EE",
   }}
 >
- 
-
     {intl.formatMessage({ id: item.description })}
   </p>
 </div>
